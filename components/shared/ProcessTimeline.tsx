@@ -8,27 +8,28 @@ export function ProcessTimeline({ steps }: { steps: ProcessStep[] }) {
     <div className="relative">
       <div
         aria-hidden="true"
-        className="absolute top-7 right-[12%] left-[12%] hidden h-px bg-gradient-to-r from-teal-500 via-teal-200 to-navy-200 lg:block"
+        className="absolute top-10 right-[12%] left-[12%] hidden h-px bg-gradient-to-r from-gold-500 via-gold-200 to-line lg:block"
       />
       <div
         aria-hidden="true"
-        className="absolute top-7 bottom-7 left-7 w-px bg-gradient-to-b from-teal-500 via-teal-200 to-navy-200 lg:hidden"
+        className="absolute top-10 bottom-10 left-10 w-px bg-gradient-to-b from-gold-500 via-gold-200 to-line lg:hidden"
       />
-      <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-8">
+      <ol className="relative grid gap-12 lg:grid-cols-4 lg:gap-8">
         {steps.map((step, index) => (
           <li key={step.title}>
-            <Reveal delay={index * 0.08} className="flex gap-6 lg:block lg:text-center">
-              <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white font-display text-lg font-bold text-navy-800 shadow-soft ring-1 ring-line lg:mx-auto">
+            <Reveal delay={index * 0.08} className="flex gap-7 lg:block lg:text-center">
+              <span className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white font-display text-3xl text-ink-900 italic shadow-soft ring-1 ring-gold-200 lg:mx-auto">
+                <span aria-hidden="true" className="absolute inset-1.5 rounded-full ring-1 ring-line" />
                 {String(index + 1).padStart(2, "0")}
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-teal-500 ring-4 ring-white"
+                    className="absolute top-1 right-1 h-3 w-3 rotate-45 bg-gold-500 ring-4 ring-white"
                   />
                 )}
               </span>
               <div>
-                <h3 className="pt-3 text-xl font-bold lg:mt-7 lg:pt-0">{step.title}</h3>
+                <h3 className="pt-4 text-3xl lg:mt-8 lg:pt-0">{step.title}</h3>
                 <p className="mt-3 leading-relaxed text-body lg:mx-auto lg:max-w-[16rem]">{step.description}</p>
               </div>
             </Reveal>

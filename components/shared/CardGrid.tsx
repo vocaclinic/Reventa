@@ -13,7 +13,7 @@ export function CardGrid({
 }: {
   items: CardItem[];
   columns?: 2 | 3 | 4;
-  tone?: "white" | "offwhite";
+  tone?: "white" | "ivory";
 }) {
   return (
     <div
@@ -29,14 +29,14 @@ export function CardGrid({
           <Reveal key={item.title} delay={(index % columns) * 0.06} className="h-full">
             <article
               className={cn(
-                "group h-full rounded-2xl border border-line p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-soft",
-                tone === "white" ? "bg-white" : "bg-offwhite",
+                "group h-full rounded-[28px] border border-line p-8 transition-all duration-500 ease-[var(--ease-brand)] hover:-translate-y-1 hover:border-gold-200 hover:shadow-lift",
+                tone === "white" ? "bg-white" : "bg-ivory",
               )}
             >
-              <IconTile className="transition-colors duration-300 group-hover:bg-navy-800 group-hover:text-teal-400 group-hover:ring-navy-800">
+              <IconTile className="transition-colors duration-300 group-hover:bg-ink-900 group-hover:text-gold-400 group-hover:ring-ink-900">
                 <Icon aria-hidden="true" />
               </IconTile>
-              <h3 className="mt-6 text-lg font-bold">{item.title}</h3>
+              <h3 className="mt-7 text-2xl leading-tight">{item.title}</h3>
               <p className="mt-2.5 leading-relaxed text-body">{item.description}</p>
             </article>
           </Reveal>

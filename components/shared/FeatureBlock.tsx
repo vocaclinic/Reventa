@@ -28,22 +28,22 @@ export function FeatureBlock({ feature, reverse = false }: { feature: Feature; r
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal className={cn(reverse && "lg:order-2")}>
             <Eyebrow>{feature.eyebrow}</Eyebrow>
-            <h3 className="mt-4 text-2xl leading-tight font-bold sm:text-3xl">{feature.title}</h3>
+            <h3 className="mt-5 text-3xl leading-[1.1] sm:text-[2.6rem]">{feature.title}</h3>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-body">{feature.description}</div>
             {feature.note && (
-              <p className="mt-6 rounded-xl border-l-2 border-teal-500 bg-teal-50/70 px-5 py-4 text-[0.94rem] leading-relaxed text-navy-700">
+              <p className="mt-7 rounded-r-2xl border-l-2 border-gold-500 bg-gold-50 px-5 py-4 text-[0.94rem] leading-relaxed text-ink-700">
                 {feature.note}
               </p>
             )}
           </Reveal>
           <Reveal delay={0.1} className={cn(reverse && "lg:order-1")}>
-            <div className="relative rounded-3xl border border-line bg-white p-7 shadow-soft sm:p-9">
-              <div aria-hidden="true" className="absolute inset-x-9 top-0 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent" />
+            <div className="relative rounded-[32px] border border-line bg-white p-7 shadow-lift sm:p-10">
+              <div aria-hidden="true" className="absolute inset-x-9 top-0 h-px rule-gold" />
               <div className="flex items-center gap-4">
-                <IconTile tone="navy">
+                <IconTile tone="ink">
                   <Icon aria-hidden="true" />
                 </IconTile>
-                <p className="font-display text-lg font-semibold text-navy-800">
+                <p className="font-display text-2xl text-ink-900">
                   {feature.pointsTitle ?? "What this includes"}
                 </p>
               </div>

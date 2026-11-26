@@ -26,7 +26,7 @@ import { HospiceTracker } from "@/components/visuals/Trackers";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Hospice Billing & Revenue Cycle Management | Revanta RCM",
+  title: "Hospice Billing & Revenue Cycle Management | Revdian",
   description:
     "Hospice billing and revenue cycle management support: NOE tracking, monthly claims by level of care, eligibility and payer verification, denial management, A/R follow-up, payment posting, and reporting for hospice providers.",
   path: "/hospice-rcm",
@@ -129,7 +129,7 @@ const features: Feature[] = [
         place and coordinate with your authorized personnel when something is missing or incomplete.
       </p>
     ),
-    note: "Revanta RCM does not determine terminal prognosis or hospice eligibility, and does not create or alter clinical records. Those determinations and records belong to the hospice's physicians and interdisciplinary group.",
+    note: "Revdian does not determine terminal prognosis or hospice eligibility, and does not create or alter clinical records. Those determinations and records belong to the hospice's physicians and interdisciplinary group.",
     points: [
       "Election statement status tracking",
       "Certification and recertification status tracking",
@@ -290,10 +290,10 @@ export default function HospicePage() {
         description="Helping hospice organizations bring greater structure and visibility to billing, claims, payment follow-up, and revenue operations."
         actions={
           <>
-            <ButtonLink href="/contact" size="lg" arrow>
-              Schedule a Consultation
+            <ButtonLink href="/contact" variant="accent" size="lg" arrow>
+              Book a Consultation
             </ButtonLink>
-            <ButtonLink href="#hospice-services" variant="secondary" size="lg">
+            <ButtonLink href="#hospice-services" variant="ghost-dark" size="lg">
               View Hospice Services
             </ButtonLink>
           </>
@@ -310,12 +310,12 @@ export default function HospicePage() {
             description="Hospice reimbursement follows its own rules — from election and benefit periods to daily rates by level of care. Keeping billing organized requires close attention to each of them."
           />
           <div className="mt-14">
-            <CardGrid items={challenges} tone="offwhite" />
+            <CardGrid items={challenges} tone="ivory" />
           </div>
         </Container>
       </Section>
 
-      <Section id="hospice-services" tone="offwhite" labelledBy="hospice-services-heading" className="border-y border-line">
+      <Section id="hospice-services" tone="ivory" labelledBy="hospice-services-heading" className="border-y border-line">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <SectionHeading
             id="hospice-services-heading"
@@ -328,7 +328,7 @@ export default function HospicePage() {
             <div className="rounded-3xl border border-line bg-white p-7 shadow-soft sm:p-9">
               <CheckList items={services} columns={2} />
               <p className="mt-7 border-t border-line pt-5 text-[0.9rem] leading-relaxed text-muted">
-                Final workflows are determined by payer rules and your hospice&apos;s agreement with Revanta RCM.
+                Final workflows are determined by payer rules and your hospice&apos;s agreement with Revdian.
               </p>
             </div>
           </Reveal>
@@ -342,7 +342,7 @@ export default function HospicePage() {
         <FeatureList features={features} />
       </section>
 
-      <Section tone="offwhite" labelledBy="hospice-process-heading" className="border-t border-line">
+      <Section tone="ivory" labelledBy="hospice-process-heading" className="border-t border-line">
         <Container>
           <SectionHeading
             id="hospice-process-heading"
@@ -365,7 +365,7 @@ export default function HospicePage() {
 
       <CtaSection
         title="Bring More Structure to Your Hospice Revenue Cycle."
-        description="Tell us about your hospice's billing workflow, payer mix, and current challenges, and we'll discuss how Revanta RCM could support your team."
+        description="Tell us about your hospice's billing workflow, payer mix, and current challenges, and we'll discuss how Revdian could support your team."
       />
     </>
   );

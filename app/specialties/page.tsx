@@ -9,9 +9,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Healthcare Specialties We Support | Revanta RCM",
+  title: "Healthcare Specialties We Support | Revdian",
   description:
-    "Revanta RCM provides specialty-focused revenue cycle management for Home Health agencies and Hospice providers, with plans to support dental practices, medical practices, clinics, and specialty groups.",
+    "Revdian provides specialty-focused revenue cycle management for Home Health agencies and Hospice providers, with plans to support dental practices, medical practices, clinics, and specialty groups.",
   path: "/specialties",
 });
 
@@ -40,8 +40,8 @@ export default function SpecialtiesPage() {
         title="Specialty-Focused Revenue Cycle Management"
         description="Revenue cycle work is never one-size-fits-all. We begin with Home Health and Hospice — and build each workflow around the rules, documentation, and payers specific to that specialty."
         actions={
-          <ButtonLink href="/contact" size="lg" arrow>
-            Schedule a Consultation
+          <ButtonLink href="/contact" variant="accent" size="lg" arrow>
+            Book a Consultation
           </ButtonLink>
         }
       />
@@ -73,16 +73,16 @@ export default function SpecialtiesPage() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.href} delay={index * 0.08} className="h-full">
-                  <article className="group flex h-full flex-col rounded-[28px] border border-line bg-offwhite p-8 transition-all duration-300 hover:border-teal-200 hover:shadow-lift sm:p-10">
-                    <IconTile tone="navy">
+                  <article className="group flex h-full flex-col rounded-[28px] border border-line bg-ivory p-8 transition-all duration-300 hover:border-gold-200 hover:shadow-lift sm:p-10">
+                    <IconTile tone="ink">
                       <Icon aria-hidden="true" />
                     </IconTile>
-                    <h3 className="mt-7 text-2xl font-bold sm:text-3xl">{item.title}</h3>
+                    <h3 className="mt-7 text-2xl font-medium sm:text-3xl">{item.title}</h3>
                     <p className="mt-4 leading-relaxed text-body">{item.description}</p>
                     <CheckList items={item.points} columns={2} className="mt-7" />
                     <Link
                       href={item.href}
-                      className="mt-auto inline-flex items-center gap-1.5 pt-9 font-semibold text-teal-700 transition-colors hover:text-navy-800"
+                      className="mt-auto inline-flex items-center gap-1.5 pt-9 font-semibold text-gold-700 transition-colors hover:text-ink-800"
                     >
                       {item.cta}
                       <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -95,7 +95,7 @@ export default function SpecialtiesPage() {
         </Container>
       </Section>
 
-      <Section tone="offwhite" labelledBy="compare-heading" className="border-y border-line">
+      <Section tone="ivory" labelledBy="compare-heading" className="border-y border-line">
         <Container>
           <SectionHeading
             id="compare-heading"
@@ -109,18 +109,18 @@ export default function SpecialtiesPage() {
                 <table className="w-full min-w-[680px] text-left">
                   <caption className="sr-only">Comparison of Home Health and Hospice billing characteristics</caption>
                   <thead>
-                    <tr className="border-b border-line bg-navy-900 text-white">
+                    <tr className="border-b border-line bg-ink-900 text-white">
                       <th scope="col" className="w-[22%] px-6 py-4 text-sm font-semibold">
                         Area
                       </th>
                       <th scope="col" className="px-6 py-4 text-sm font-semibold">
                         <span className="inline-flex items-center gap-2">
-                          <House aria-hidden="true" className="h-4 w-4 text-teal-400" /> Home Health
+                          <House aria-hidden="true" className="h-4 w-4 text-gold-400" /> Home Health
                         </span>
                       </th>
                       <th scope="col" className="px-6 py-4 text-sm font-semibold">
                         <span className="inline-flex items-center gap-2">
-                          <HeartHandshake aria-hidden="true" className="h-4 w-4 text-teal-400" /> Hospice
+                          <HeartHandshake aria-hidden="true" className="h-4 w-4 text-gold-400" /> Hospice
                         </span>
                       </th>
                     </tr>
@@ -128,7 +128,7 @@ export default function SpecialtiesPage() {
                   <tbody className="divide-y divide-line">
                     {comparison.map((row) => (
                       <tr key={row.label} className="align-top">
-                        <th scope="row" className="px-6 py-5 text-[0.93rem] font-semibold text-navy-800">
+                        <th scope="row" className="px-6 py-5 text-[0.93rem] font-semibold text-ink-800">
                           {row.label}
                         </th>
                         <td className="px-6 py-5 text-[0.93rem] leading-relaxed">{row.homeHealth}</td>
@@ -153,23 +153,23 @@ export default function SpecialtiesPage() {
             id="future-heading"
             eyebrow="Looking ahead"
             title="Growing Into Additional Specialties"
-            description="Revanta RCM is designed to expand beyond Home Health and Hospice. We are building toward supporting the following areas. If your organization works in one of them, we welcome a conversation about your needs."
+            description="Revdian is designed to expand beyond Home Health and Hospice. We are building toward supporting the following areas. If your organization works in one of them, we welcome a conversation about your needs."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {future.map((item, index) => {
               const Icon = item.icon;
               return (
                 <Reveal key={item.title} delay={index * 0.06} className="h-full">
-                  <article className="h-full rounded-2xl border border-dashed border-navy-200 bg-white p-7">
+                  <article className="h-full rounded-2xl border border-dashed border-ink-200 bg-white p-7">
                     <div className="flex items-start justify-between">
                       <IconTile>
                         <Icon aria-hidden="true" />
                       </IconTile>
-                      <span className="rounded-full bg-navy-50 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-navy-700 uppercase">
+                      <span className="rounded-full bg-ink-50 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-ink-700 uppercase">
                         Planned
                       </span>
                     </div>
-                    <h3 className="mt-6 text-lg font-bold">{item.title}</h3>
+                    <h3 className="mt-6 text-lg font-medium">{item.title}</h3>
                     <p className="mt-2 leading-relaxed text-body">{item.description}</p>
                   </article>
                 </Reveal>

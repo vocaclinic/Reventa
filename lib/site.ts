@@ -18,15 +18,16 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "Revanta RCM",
-  shortName: "Revanta",
-  tagline: "Smarter Revenue. Stronger Healthcare.",
+  name: "Revdian",
+  shortName: "Revdian",
+  /** Revdian = revenue + guardian. Keep the tagline and headlines on that idea. */
+  tagline: "Revenue, Guarded.",
   description:
-    "Revanta RCM provides technology-enabled revenue cycle management and billing support for Home Health, Hospice, and healthcare providers across the United States.",
+    "Revdian guards the revenue cycle for Home Health, Hospice, and healthcare providers across the United States with technology-enabled billing, claims, A/R, and denial management support.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com").replace(/\/$/, ""),
 
   contact: {
-    /** e.g. "hello@revantarcm.com" */
+    /** e.g. "hello@revdian.com" (update the domain extension if it differs) */
     email: "",
     /** e.g. "+1 (555) 010-0000" */
     phone: "",

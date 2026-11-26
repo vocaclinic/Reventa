@@ -1,18 +1,19 @@
 import { Hero } from "@/components/home/Hero";
 import {
+  Manifesto,
   ProcessSection,
   ServicesOverview,
   SpecialtiesSection,
   TechnologySection,
   ValueProposition,
-  WhyRevanta,
+  WhyRevdian,
 } from "@/components/home/HomeSections";
 import { CtaSection } from "@/components/shared/CtaSection";
 import { absoluteUrl, createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Revanta RCM | Healthcare Revenue Cycle Management",
+  title: "Revdian | Revenue, Guarded. Healthcare Revenue Cycle Management",
   description: siteConfig.description,
   path: "/",
 });
@@ -32,10 +33,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Manifesto />
       <ValueProposition />
       <ServicesOverview />
       <SpecialtiesSection />
-      <WhyRevanta />
+      <WhyRevdian />
       <ProcessSection />
       <TechnologySection />
       <CtaSection />

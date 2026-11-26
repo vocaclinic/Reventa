@@ -20,7 +20,7 @@ export function CheckList({
             aria-hidden="true"
             className={cn(
               "mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full",
-              tone === "light" ? "bg-teal-100 text-teal-700" : "bg-teal-500/15 text-teal-400",
+              tone === "light" ? "bg-gold-100 text-gold-700 ring-1 ring-gold-200" : "bg-gold-400/10 text-gold-400 ring-1 ring-gold-400/25",
             )}
           >
             <Check className="h-3 w-3" strokeWidth={3} />
@@ -28,7 +28,7 @@ export function CheckList({
           <span
             className={cn(
               "text-[0.95rem] leading-snug",
-              tone === "light" ? "text-navy-700" : "text-navy-100",
+              tone === "light" ? "text-ink-700" : "text-ink-100/90",
             )}
           >
             {item}

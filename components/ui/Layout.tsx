@@ -5,12 +5,12 @@ export function Container({ className, children }: { className?: string; childre
   return <div className={cn("mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8", className)}>{children}</div>;
 }
 
-type Tone = "white" | "offwhite" | "navy";
+type Tone = "white" | "ivory" | "ink";
 
 const tones: Record<Tone, string> = {
   white: "bg-white",
-  offwhite: "bg-offwhite",
-  navy: "bg-navy-900 text-navy-200",
+  ivory: "bg-ivory",
+  ink: "bg-ink-aurora text-ink-200 isolate overflow-hidden",
 };
 
 export function Section({
@@ -30,8 +30,9 @@ export function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn("relative py-20 sm:py-24 lg:py-28", tones[tone], className)}
+      className={cn("relative py-24 sm:py-28 lg:py-36", tones[tone], className)}
     >
+      {tone === "ink" && <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />}
       {children}
     </section>
   );
@@ -49,12 +50,15 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "inline-flex items-center gap-2 text-[0.78rem] font-semibold tracking-[0.14em] uppercase",
-        tone === "light" ? "text-teal-700" : "text-teal-400",
+        "inline-flex items-center gap-3 text-[0.72rem] font-medium tracking-[0.28em] uppercase",
+        tone === "light" ? "text-gold-700" : "text-gold-400",
         className,
       )}
     >
-      <span aria-hidden="true" className="h-px w-6 bg-current opacity-70" />
+      <span aria-hidden="true" className="inline-flex items-center gap-1.5">
+        <span className="h-1 w-1 rotate-45 bg-current" />
+        <span className="h-px w-7 bg-current opacity-60" />
+      </span>
       {children}
     </p>
   );
@@ -93,7 +97,7 @@ export function SectionHeading({
       <h2
         id={id}
         className={cn(
-          "mt-4 text-3xl leading-[1.15] font-bold sm:text-4xl lg:text-[2.75rem]",
+          "mt-5 text-[2.35rem] leading-[1.06] sm:text-5xl lg:text-[3.6rem]",
           tone === "dark" && "text-white",
         )}
       >
@@ -102,8 +106,9 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-5 text-lg leading-relaxed",
-            tone === "light" ? "text-body" : "text-navy-200",
+            "mt-6 text-lg leading-relaxed",
+            align === "center" && "mx-auto max-w-2xl",
+            tone === "light" ? "text-body" : "text-ink-200",
           )}
         >
           {description}
@@ -116,22 +121,22 @@ export function SectionHeading({
 /** Rounded square container for a section/card icon. */
 export function IconTile({
   children,
-  tone = "teal",
+  tone = "gold",
   className,
 }: {
   children: ReactNode;
-  tone?: "teal" | "navy" | "dark";
+  tone?: "gold" | "ink" | "dark";
   className?: string;
 }) {
   const styles = {
-    teal: "bg-teal-50 text-teal-700 ring-1 ring-teal-100",
-    navy: "bg-navy-800 text-teal-400",
-    dark: "bg-white/5 text-teal-400 ring-1 ring-white/10",
+    gold: "bg-gold-50 text-gold-700 ring-1 ring-gold-200/70",
+    ink: "bg-ink-900 text-gold-400 ring-1 ring-ink-900 shadow-[inset_0_1px_0_rgb(255_255_255/0.1)]",
+    dark: "bg-white/[0.04] text-gold-400 ring-1 ring-gold-400/20",
   }[tone];
   return (
     <span
       className={cn(
-        "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl [&_svg]:h-[22px] [&_svg]:w-[22px]",
+        "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl [&_svg]:h-[21px] [&_svg]:w-[21px] [&_svg]:stroke-[1.6]",
         styles,
         className,
       )}

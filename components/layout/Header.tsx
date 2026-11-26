@@ -48,14 +48,14 @@ export function Header() {
     <>
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300",
+        "sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-500",
         scrolled || mobileOpen
-          ? "border-line bg-white/90 shadow-[0_6px_24px_-18px_rgb(16_42_67/0.35)] backdrop-blur-lg"
-          : "border-transparent bg-white/70 backdrop-blur-md",
+          ? "border-white/[0.07] bg-ink-950/85 shadow-[0_18px_40px_-24px_rgb(0_0_0/0.7)] backdrop-blur-xl"
+          : "border-white/[0.05] bg-ink-950",
       )}
     >
-      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
-        <Logo />
+      <div className="mx-auto flex h-[80px] w-full max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
+        <Logo tone="dark" />
 
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
@@ -85,13 +85,13 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
-            <ButtonLink href="/contact" size="sm">
-              Schedule a Consultation
+            <ButtonLink href="/contact" variant="accent" size="sm" arrow>
+              Book a Consultation
             </ButtonLink>
           </div>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-navy-800 ring-1 ring-line transition hover:bg-navy-50 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white ring-1 ring-white/15 transition hover:bg-white/10 lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -113,11 +113,9 @@ export function Header() {
 
 function navLinkClass(active: boolean) {
   return cn(
-    "relative inline-flex h-10 items-center rounded-lg px-3.5 text-[0.94rem] font-medium transition-colors",
-    "after:absolute after:inset-x-3.5 after:-bottom-[15px] after:h-0.5 after:rounded-full after:transition-opacity",
-    active
-      ? "text-navy-800 after:bg-teal-500 after:opacity-100"
-      : "text-body hover:text-navy-800 after:opacity-0",
+    "relative inline-flex h-10 items-center rounded-full px-3.5 text-[0.92rem] font-medium tracking-[-0.005em] transition-colors",
+    "after:absolute after:bottom-0.5 after:left-1/2 after:h-1 after:w-1 after:-translate-x-1/2 after:rotate-45 after:bg-gold-400 after:transition-opacity",
+    active ? "text-white after:opacity-100" : "text-ink-200/80 hover:text-white after:opacity-0",
   );
 }
 
@@ -197,7 +195,7 @@ function DesktopDropdown({
           aria-controls={panelId}
           aria-label={`${open ? "Hide" : "Show"} ${item.label} menu`}
           onClick={() => setOpen(!open)}
-          className="inline-flex h-8 w-6 items-center justify-center rounded-md text-muted transition hover:text-navy-800"
+          className="inline-flex h-8 w-6 items-center justify-center rounded-md text-ink-200/60 transition hover:text-white"
         >
           <ChevronDown
             aria-hidden="true"
@@ -218,7 +216,7 @@ function DesktopDropdown({
           >
             <div
               className={cn(
-                "overflow-hidden rounded-2xl border border-line bg-white shadow-lift",
+                "overflow-hidden rounded-3xl border border-white/10 bg-ink-900/95 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.8)] backdrop-blur-xl",
                 isServices ? "w-[620px]" : "w-[400px]",
               )}
             >
@@ -230,19 +228,19 @@ function DesktopDropdown({
                       <Link
                         href={child.href}
                         onClick={() => setOpen(false)}
-                        className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-offwhite"
+                        className="group flex items-start gap-3 rounded-2xl p-3 transition-colors hover:bg-white/[0.05]"
                       >
                         {Icon && (
-                          <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700 ring-1 ring-teal-100 transition-colors group-hover:bg-navy-800 group-hover:text-teal-400 group-hover:ring-navy-800">
+                          <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/[0.04] text-gold-400 ring-1 ring-gold-400/20 transition-colors group-hover:bg-gold-400 group-hover:text-ink-950 group-hover:ring-gold-400">
                             <Icon aria-hidden="true" className="h-[18px] w-[18px]" />
                           </span>
                         )}
                         <span className="min-w-0">
-                          <span className="block text-[0.93rem] font-semibold text-navy-800">
+                          <span className="block text-[0.93rem] font-medium text-white">
                             {child.label}
                           </span>
                           {child.description && (
-                            <span className="mt-0.5 block text-[0.83rem] leading-snug text-muted">
+                            <span className="mt-0.5 block text-[0.83rem] leading-snug text-ink-200/70">
                               {child.description}
                             </span>
                           )}
@@ -253,12 +251,12 @@ function DesktopDropdown({
                 })}
               </ul>
               {isServices && (
-                <div className="flex items-center justify-between border-t border-line bg-offwhite px-6 py-3.5">
-                  <p className="text-[0.83rem] text-muted">Scope is defined with each client.</p>
+                <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-6 py-3.5">
+                  <p className="text-[0.83rem] text-ink-200/60">Scope is defined with each client.</p>
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-teal-700 hover:text-navy-800"
+                    className="inline-flex items-center gap-1.5 text-[0.85rem] font-medium text-gold-400 hover:text-white"
                   >
                     View all services <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                   </Link>
@@ -282,10 +280,10 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-[72px] bottom-0 z-40 overflow-y-auto border-t border-line bg-white lg:hidden"
+      className="fixed inset-x-0 top-[80px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-ink-950 lg:hidden"
     >
       <nav aria-label="Mobile" className="mx-auto flex min-h-full max-w-7xl flex-col px-5 pt-4 pb-8 sm:px-6">
-        <ul className="divide-y divide-line">
+        <ul className="divide-y divide-white/10">
           {mainNav.map((item) => {
             const active = isActive(pathname, item);
             if (!item.children) {
@@ -296,8 +294,8 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
                     onClick={onNavigate}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "flex items-center justify-between py-4 font-display text-lg font-semibold",
-                      active ? "text-teal-700" : "text-navy-800",
+                      "flex items-center justify-between py-4 font-display text-2xl font-medium",
+                      active ? "text-gold-400" : "text-white",
                     )}
                   >
                     {item.label}
@@ -315,14 +313,14 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
                   aria-controls={groupId}
                   onClick={() => setExpanded(isOpen ? null : item.label)}
                   className={cn(
-                    "flex w-full items-center justify-between py-4 font-display text-lg font-semibold",
-                    active ? "text-teal-700" : "text-navy-800",
+                    "flex w-full items-center justify-between py-4 font-display text-2xl font-medium",
+                    active ? "text-gold-400" : "text-white",
                   )}
                 >
                   {item.label}
                   <ChevronDown
                     aria-hidden="true"
-                    className={cn("h-5 w-5 text-muted transition-transform", isOpen && "rotate-180")}
+                    className={cn("h-5 w-5 text-ink-200/60 transition-transform", isOpen && "rotate-180")}
                   />
                 </button>
                 <AnimatePresence initial={false}>
@@ -339,7 +337,7 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
                         <Link
                           href={item.href}
                           onClick={onNavigate}
-                          className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[0.95rem] font-semibold text-teal-700"
+                          className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-gold-400"
                         >
                           {item.label === "Services" ? "All services" : "Specialties overview"}
                           <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -352,7 +350,7 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
                             <Link
                               href={child.href}
                               onClick={onNavigate}
-                              className="block rounded-lg px-3 py-2.5 text-[0.95rem] text-body hover:bg-offwhite hover:text-navy-800"
+                              className="block rounded-lg px-3 py-2.5 text-[0.95rem] text-ink-200 hover:bg-white/5 hover:text-white"
                             >
                               {child.label}
                             </Link>
@@ -367,11 +365,11 @@ function MobileMenu({ pathname, onNavigate }: { pathname: string; onNavigate: ()
           })}
         </ul>
         <div className="mt-auto pt-8">
-          <ButtonLink href="/contact" onClick={onNavigate} size="lg" arrow className="w-full">
-            Schedule a Consultation
+          <ButtonLink href="/contact" onClick={onNavigate} variant="accent" size="lg" arrow className="w-full">
+            Book a Consultation
           </ButtonLink>
-          <p className="mt-4 text-center text-sm text-muted">
-            Healthcare revenue cycle management for U.S. providers.
+          <p className="mt-4 text-center text-sm text-ink-200/60">
+            Revenue, guarded. Healthcare RCM for U.S. providers.
           </p>
         </div>
       </nav>

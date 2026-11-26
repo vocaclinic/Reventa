@@ -10,7 +10,7 @@ import { createMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
 
 export const metadata = createMetadata({
-  title: "Healthcare Billing & RCM Services | Revanta RCM",
+  title: "Healthcare Billing & RCM Services | Revdian",
   description:
     "Medical billing services, claims management, accounts receivable management, denial management, payment posting, eligibility verification, authorization support, and RCM reporting for U.S. healthcare providers.",
   path: "/services",
@@ -30,13 +30,13 @@ function ServiceIndex() {
             <li key={service.slug}>
               <Link
                 href={`#${service.slug}`}
-                className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-offwhite"
+                className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-ivory"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700 ring-1 ring-teal-100 transition-colors group-hover:bg-navy-800 group-hover:text-teal-400">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold-50 text-gold-700 ring-1 ring-gold-100 transition-colors group-hover:bg-ink-800 group-hover:text-gold-400">
                   <Icon aria-hidden="true" className="h-[18px] w-[18px]" />
                 </span>
-                <span className="min-w-0 flex-1 text-[0.9rem] font-semibold text-navy-800">{service.navLabel}</span>
-                <span aria-hidden="true" className="text-xs font-semibold text-navy-200">
+                <span className="min-w-0 flex-1 text-[0.9rem] font-semibold text-ink-800">{service.navLabel}</span>
+                <span aria-hidden="true" className="text-xs font-semibold text-ink-200">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </Link>
@@ -55,13 +55,13 @@ export default function ServicesPage() {
         breadcrumb="Services"
         eyebrow="Services"
         title="Healthcare Billing and Revenue Cycle Management Services"
-        description="Revanta RCM supports the core operational processes of the revenue cycle — from medical billing and claims to accounts receivable follow-up, denial management, payment posting, and reporting. Each engagement is scoped around your specialty, systems, and priorities."
+        description="Revdian supports the core operational processes of the revenue cycle — from medical billing and claims to accounts receivable follow-up, denial management, payment posting, and reporting. Each engagement is scoped around your specialty, systems, and priorities."
         actions={
           <>
-            <ButtonLink href="/contact" size="lg" arrow>
-              Schedule a Consultation
+            <ButtonLink href="/contact" variant="accent" size="lg" arrow>
+              Book a Consultation
             </ButtonLink>
-            <ButtonLink href="#scoping" variant="secondary" size="lg">
+            <ButtonLink href="#scoping" variant="ghost-dark" size="lg">
               How Engagements Work
             </ButtonLink>
           </>
@@ -76,26 +76,26 @@ export default function ServicesPage() {
             <div
               key={service.slug}
               id={service.slug}
-              className={index % 2 === 1 ? "border-y border-line bg-offwhite" : "bg-white"}
+              className={index % 2 === 1 ? "border-y border-line bg-ivory" : "bg-white"}
             >
               <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:gap-14">
                 <Reveal className="lg:col-span-5">
                   <div className="lg:sticky lg:top-28">
                     <div className="flex items-center gap-4">
-                      <IconTile tone="navy">
+                      <IconTile tone="ink">
                         <Icon aria-hidden="true" />
                       </IconTile>
-                      <span className="font-display text-sm font-semibold tracking-[0.14em] text-muted uppercase">
+                      <span className="font-display text-sm font-medium tracking-[0.14em] text-muted uppercase">
                         Service {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h2 className="mt-6 text-3xl leading-tight font-bold sm:text-[2.1rem]">{service.title}</h2>
+                    <h2 className="mt-6 text-3xl leading-tight font-medium sm:text-[2.1rem]">{service.title}</h2>
                     <p className="mt-4 text-lg leading-relaxed text-body">{service.summary}</p>
                     <ul aria-label={`${service.title} includes`} className="mt-6 flex flex-wrap gap-2">
                       {service.points.map((point) => (
                         <li
                           key={point}
-                          className="rounded-full border border-line bg-white px-3 py-1.5 text-[0.82rem] font-medium text-navy-700"
+                          className="rounded-full border border-line bg-white px-3 py-1.5 text-[0.82rem] font-medium text-ink-700"
                         >
                           {point}
                         </li>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                     </ul>
                     <Link
                       href="/contact"
-                      className="mt-8 inline-flex items-center gap-1.5 font-semibold text-teal-700 transition-colors hover:text-navy-800"
+                      className="mt-8 inline-flex items-center gap-1.5 font-semibold text-gold-700 transition-colors hover:text-ink-800"
                     >
                       Discuss {service.title}
                       <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -115,21 +115,21 @@ export default function ServicesPage() {
                   {[
                     { label: "What it involves", text: service.involves },
                     { label: "The operational challenge", text: service.challenge },
-                    { label: "How Revanta RCM supports the workflow", text: service.support },
+                    { label: "How Revdian supports the workflow", text: service.support },
                   ].map((block, i) => (
                     <Reveal key={block.label} delay={i * 0.06}>
                       <div
                         className={
                           i === 2
-                            ? "rounded-2xl bg-navy-900 p-7 text-navy-100 sm:p-8"
+                            ? "rounded-2xl bg-ink-900 p-7 text-ink-100 sm:p-8"
                             : "rounded-2xl border border-line bg-white p-7 sm:p-8"
                         }
                       >
                         <h3
                           className={
                             i === 2
-                              ? "text-sm font-semibold tracking-[0.12em] text-teal-400 uppercase"
-                              : "text-sm font-semibold tracking-[0.12em] text-teal-700 uppercase"
+                              ? "text-sm font-semibold tracking-[0.12em] text-gold-400 uppercase"
+                              : "text-sm font-semibold tracking-[0.12em] text-gold-700 uppercase"
                           }
                         >
                           {block.label}
@@ -147,7 +147,7 @@ export default function ServicesPage() {
         })}
       </section>
 
-      <Section id="scoping" tone="offwhite" labelledBy="scoping-heading" className="border-t border-line">
+      <Section id="scoping" tone="ivory" labelledBy="scoping-heading" className="border-t border-line">
         <Container>
           <SectionHeading
             id="scoping-heading"
@@ -180,7 +180,7 @@ export default function ServicesPage() {
             />
           </div>
           <p className="mx-auto mt-10 max-w-3xl text-center text-[0.94rem] leading-relaxed text-muted">
-            Final workflows are determined by applicable payer rules and the terms of each client agreement. Revanta
+            Final workflows are determined by applicable payer rules and the terms of each client agreement. Revdian
             RCM does not guarantee specific reimbursement, collection, or denial outcomes.
           </p>
         </Container>

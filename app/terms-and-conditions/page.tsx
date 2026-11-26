@@ -4,8 +4,8 @@ import { createMetadata } from "@/lib/seo";
 import { contactPlaceholders, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Terms and Conditions | Revanta RCM",
-  description: "Terms and conditions governing the use of the Revanta RCM website.",
+  title: "Terms and Conditions | Revdian",
+  description: "Terms and conditions governing the use of the Revdian website.",
   path: "/terms-and-conditions",
 });
 
@@ -16,12 +16,12 @@ export default function TermsPage() {
     <LegalPage
       breadcrumb="Terms and Conditions"
       title="Terms and Conditions"
-      intro="These Terms and Conditions govern your use of the Revanta RCM website. By using this website, you agree to these terms."
+      intro="These Terms and Conditions govern your use of the Revdian website. By using this website, you agree to these terms."
     >
       <h2>1. About this website</h2>
       <p>
-        This website provides general information about Revanta RCM and the healthcare revenue cycle management
-        services we offer. Any services are provided only under a separate written agreement between Revanta RCM and
+        This website provides general information about Revdian and the healthcare revenue cycle management
+        services we offer. Any services are provided only under a separate written agreement between Revdian and
         the client, which governs in the event of any conflict with these terms.
       </p>
 
@@ -34,7 +34,7 @@ export default function TermsPage() {
 
       <h2>3. No guarantee of outcomes</h2>
       <p>
-        Revanta RCM does not guarantee any specific reimbursement, collection, denial, or financial outcome. Results
+        Revdian does not guarantee any specific reimbursement, collection, denial, or financial outcome. Results
         depend on many factors, including documentation, payer policies, and payer determinations outside our control.
       </p>
 
@@ -55,7 +55,7 @@ export default function TermsPage() {
 
       <h2>6. Intellectual property</h2>
       <p>
-        The Revanta RCM name, logo, website design, and content are owned by Revanta RCM or its licensors and may not be
+        The Revdian name, logo, website design, and content are owned by Revdian or its licensors and may not be
         used without prior written permission.
       </p>
 
@@ -67,7 +67,7 @@ export default function TermsPage() {
       <h2>8. Disclaimer and limitation of liability</h2>
       <p>
         The website is provided &ldquo;as is&rdquo; without warranties of any kind. To the fullest extent permitted by
-        law, Revanta RCM is not liable for any damages arising from your use of the website. [To be finalized by legal
+        law, Revdian is not liable for any damages arising from your use of the website. [To be finalized by legal
         counsel.]
       </p>
 

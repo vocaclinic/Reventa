@@ -5,6 +5,10 @@ import { Container, Eyebrow } from "@/components/ui/Layout";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
+/**
+ * Dark hero used at the top of every inner page. Pass light-on-dark buttons
+ * (`variant="accent"` / `variant="ghost-dark"`) in `actions`.
+ */
 export function PageHero({
   eyebrow,
   title,
@@ -24,39 +28,45 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-line bg-offwhite">
-      <div aria-hidden="true" className="bg-grid mask-fade-y absolute inset-0 -z-10" />
+    <section className="bg-ink-aurora relative isolate overflow-hidden text-ink-200">
+      <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />
+      <div aria-hidden="true" className="bg-grid-dark mask-fade-y pointer-events-none absolute inset-0 -z-10" />
       <div
         aria-hidden="true"
-        className="absolute -top-32 right-[-10%] -z-10 h-[28rem] w-[28rem] rounded-full bg-teal-100/70 blur-3xl"
+        className="pointer-events-none absolute -top-40 -right-40 -z-10 h-[34rem] w-[34rem] rounded-full border border-gold-400/10"
       />
+      <div aria-hidden="true" className="rule-gold absolute inset-x-0 bottom-0 h-px opacity-40" />
       <Container
         className={cn(
-          "py-16 sm:py-20 lg:py-24",
-          Boolean(aside) && "grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16",
+          "py-16 sm:py-20 lg:py-28",
+          Boolean(aside) && "grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16",
         )}
       >
-        <div className={cn(!aside && "max-w-3xl")}>
+        <div className={cn(!aside && "max-w-4xl")}>
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-1.5 text-sm text-muted">
+            <ol className="flex items-center gap-1.5 text-sm text-ink-200/60">
               <li>
-                <Link href="/" className="hover:text-navy-800">
+                <Link href="/" className="transition-colors hover:text-white">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">
                 <ChevronRight className="h-3.5 w-3.5" />
               </li>
-              <li aria-current="page" className="font-medium text-navy-700">
+              <li aria-current="page" className="font-medium text-ink-100">
                 {breadcrumb}
               </li>
             </ol>
           </nav>
           <Reveal>
-            {eyebrow && <Eyebrow className="mt-8">{eyebrow}</Eyebrow>}
-            <h1 className="mt-5 text-4xl leading-[1.08] font-extrabold sm:text-5xl lg:text-[3.1rem]">{title}</h1>
-            {description && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body sm:text-xl">{description}</p>}
-            {actions && <div className="mt-9 flex flex-col gap-3 sm:flex-row">{actions}</div>}
+            {eyebrow && (
+              <Eyebrow tone="dark" className="mt-10">
+                {eyebrow}
+              </Eyebrow>
+            )}
+            <h1 className="mt-6 text-[2.6rem] leading-[1.04] text-white sm:text-[3.4rem] lg:text-[3.75rem]">{title}</h1>
+            {description && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-200 sm:text-xl">{description}</p>}
+            {actions && <div className="mt-10 flex flex-col gap-3 sm:flex-row">{actions}</div>}
             {children}
           </Reveal>
         </div>

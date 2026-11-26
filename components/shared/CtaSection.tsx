@@ -1,3 +1,4 @@
+import { LogoMark } from "@/components/brand/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Layout";
 import { Reveal } from "@/components/ui/Reveal";
@@ -5,9 +6,9 @@ import { Reveal } from "@/components/ui/Reveal";
 type CtaLink = { label: string; href: string };
 
 export function CtaSection({
-  title = "Let's Make Your Revenue Cycle Work Smarter.",
-  description = "Whether you are looking to improve billing workflows, manage outstanding receivables, or explore dedicated RCM support, let's discuss how Revanta RCM can support your organization.",
-  primary = { label: "Schedule a Consultation", href: "/contact" },
+  title = "Let's put a guardian on your revenue cycle.",
+  description = "Whether you are looking to improve billing workflows, manage outstanding receivables, or explore dedicated RCM support, let's discuss how Revdian can support your organization.",
+  primary = { label: "Book a Consultation", href: "/contact" },
   secondary = { label: "Contact Our Team", href: "/contact#contact-form" },
 }: {
   title?: string;
@@ -16,24 +17,30 @@ export function CtaSection({
   secondary?: CtaLink;
 }) {
   return (
-    <section aria-labelledby="cta-heading" className="bg-white py-20 sm:py-24">
+    <section aria-labelledby="cta-heading" className="bg-ivory py-24 sm:py-28">
       <Container>
         <Reveal>
-          <div className="relative isolate overflow-hidden rounded-[28px] bg-navy-900 px-6 py-16 text-center sm:px-12 sm:py-20 lg:px-20">
+          <div className="bg-ink-aurora relative isolate overflow-hidden rounded-[36px] px-6 py-20 text-center shadow-lift sm:px-12 sm:py-24 lg:px-20">
+            <div aria-hidden="true" className="bg-grain absolute inset-0 -z-10" />
             <div aria-hidden="true" className="bg-grid-dark mask-fade-y absolute inset-0 -z-10" />
             <div
               aria-hidden="true"
-              className="absolute -top-40 left-1/2 -z-10 h-80 w-[44rem] -translate-x-1/2 rounded-full bg-teal-500/20 blur-3xl"
+              className="absolute top-1/2 left-1/2 -z-10 h-[46rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/10"
             />
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-teal-400/60 to-transparent"
+              className="absolute top-1/2 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/10"
             />
-            <h2 id="cta-heading" className="mx-auto max-w-3xl text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-5xl">
+            <div aria-hidden="true" className="rule-gold absolute inset-x-0 top-0 h-px" />
+            <LogoMark tone="dark" className="mx-auto h-14 w-14" />
+            <h2
+              id="cta-heading"
+              className="mx-auto mt-8 max-w-3xl text-4xl leading-[1.05] text-white sm:text-5xl lg:text-6xl"
+            >
               {title}
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-navy-200">{description}</p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-200">{description}</p>
+            <div className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href={primary.href} variant="accent" size="lg" arrow className="w-full sm:w-auto">
                 {primary.label}
               </ButtonLink>

@@ -24,7 +24,7 @@ import { HomeHealthTracker } from "@/components/visuals/Trackers";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Home Health Billing & RCM Services | Revanta RCM",
+  title: "Home Health Billing & RCM Services | Revdian",
   description:
     "Home Health billing and revenue cycle management support: NOA tracking, PDGM 30-day period claims, documentation completeness checks, denial management, A/R follow-up, and payment posting for Home Health agencies.",
   path: "/home-health-rcm",
@@ -132,7 +132,7 @@ const features: Feature[] = [
         coordinate with your authorized personnel to resolve them before claims move forward.
       </p>
     ),
-    note: "Revanta RCM does not create, alter, or interpret clinical records, and does not make clinical eligibility, homebound status, or medical necessity determinations. Those remain with your agency's clinicians and the certifying practitioner.",
+    note: "Revdian does not create, alter, or interpret clinical records, and does not make clinical eligibility, homebound status, or medical necessity determinations. Those remain with your agency's clinicians and the certifying practitioner.",
     points: [
       "Pre-billing documentation completeness checks",
       "Plan of Care and signed order status tracking",
@@ -235,7 +235,7 @@ const process = [
 
 const faqs = [
   {
-    question: "Does Revanta RCM work with our existing EMR and billing system?",
+    question: "Does Revdian work with our existing EMR and billing system?",
     answer:
       "We aim to work within the systems your agency already uses. System access, user roles, and workflows are defined during onboarding and depend on your platforms and the terms of our agreement.",
   },
@@ -273,13 +273,13 @@ export default function HomeHealthPage() {
         breadcrumb="Home Health RCM"
         eyebrow="Home Health RCM"
         title="Home Health Revenue Cycle Management That Keeps Your Operations Moving."
-        description="From NOA tracking and billing workflows to claims follow-up, denial management, and accounts receivable visibility, Revanta RCM supports the financial operations of Home Health agencies."
+        description="From NOA tracking and billing workflows to claims follow-up, denial management, and accounts receivable visibility, Revdian supports the financial operations of Home Health agencies."
         actions={
           <>
-            <ButtonLink href="/contact" size="lg" arrow>
-              Schedule a Consultation
+            <ButtonLink href="/contact" variant="accent" size="lg" arrow>
+              Book a Consultation
             </ButtonLink>
-            <ButtonLink href="#home-health-services" variant="secondary" size="lg">
+            <ButtonLink href="#home-health-services" variant="ghost-dark" size="lg">
               View Home Health Services
             </ButtonLink>
           </>
@@ -296,12 +296,12 @@ export default function HomeHealthPage() {
             description="Home Health billing sits at the intersection of clinical documentation, Medicare rules, and day-to-day operations. Small gaps at intake or documentation can surface weeks later as delayed or denied claims."
           />
           <div className="mt-14">
-            <CardGrid items={challenges} tone="offwhite" />
+            <CardGrid items={challenges} tone="ivory" />
           </div>
         </Container>
       </Section>
 
-      <Section id="home-health-services" tone="offwhite" labelledBy="hh-services-heading" className="border-y border-line">
+      <Section id="home-health-services" tone="ivory" labelledBy="hh-services-heading" className="border-y border-line">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <SectionHeading
             id="hh-services-heading"
@@ -314,7 +314,7 @@ export default function HomeHealthPage() {
             <div className="rounded-3xl border border-line bg-white p-7 shadow-soft sm:p-9">
               <CheckList items={services} columns={2} />
               <p className="mt-7 border-t border-line pt-5 text-[0.9rem] leading-relaxed text-muted">
-                Final workflows are determined by payer rules and your agency&apos;s agreement with Revanta RCM.
+                Final workflows are determined by payer rules and your agency&apos;s agreement with Revdian.
               </p>
             </div>
           </Reveal>
@@ -328,7 +328,7 @@ export default function HomeHealthPage() {
         <FeatureList features={features} />
       </section>
 
-      <Section tone="offwhite" labelledBy="hh-process-heading" className="border-t border-line">
+      <Section tone="ivory" labelledBy="hh-process-heading" className="border-t border-line">
         <Container>
           <SectionHeading
             id="hh-process-heading"
@@ -351,7 +351,7 @@ export default function HomeHealthPage() {
 
       <CtaSection
         title="Let's Talk About Your Home Health Revenue Cycle."
-        description="Share where your agency is today — NOA timeliness, aging A/R, denials, or reporting — and we'll discuss how Revanta RCM could support your team."
+        description="Share where your agency is today — NOA timeliness, aging A/R, denials, or reporting — and we'll discuss how Revdian could support your team."
       />
     </>
   );

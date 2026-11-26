@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
+import { R_BOWL_PATH, R_LEG_PATH, SHIELD_PATH } from "@/components/brand/paths";
+import { siteConfig } from "@/lib/site";
 
-export const alt = "Revanta RCM — Smarter Revenue. Stronger Healthcare.";
+export const alt = `${siteConfig.name} — ${siteConfig.tagline} Healthcare revenue cycle management.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,45 +16,54 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "72px 80px",
-          background: "#0B1F33",
+          padding: "72px 84px",
+          background: "#05080F",
           backgroundImage:
-            "radial-gradient(circle at 85% 10%, rgba(22,166,161,0.35), transparent 45%), radial-gradient(circle at 0% 100%, rgba(40,75,110,0.6), transparent 50%)",
+            "radial-gradient(circle at 88% 0%, rgba(184,150,79,0.38), transparent 48%), radial-gradient(circle at 0% 100%, rgba(52,66,94,0.7), transparent 52%)",
           color: "#FFFFFF",
-          fontFamily: "sans-serif",
+          fontFamily: "serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <svg width="72" height="72" viewBox="0 0 40 40">
-            <rect width="40" height="40" rx="10" fill="#102A43" stroke="rgba(255,255,255,0.2)" />
+        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+          <svg width="76" height="76" viewBox="0 0 40 40">
+            <path d={SHIELD_PATH} fill="#111A2E" stroke="#D4B97F" strokeWidth="1.3" />
             <path
-              d="M14 29.5V10.5h7.25a5.75 5.75 0 0 1 0 11.5H14"
+              d={R_BOWL_PATH}
               fill="none"
-              stroke="#FFFFFF"
-              strokeWidth="3.4"
+              stroke="#FAF8F3"
+              strokeWidth="2.6"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
-              d="M20.4 22.2 25.3 27.9c1.1 1.3 2.4 1.8 4.2 1.6"
+              d={R_LEG_PATH}
               fill="none"
-              stroke="#3FC3BD"
-              strokeWidth="3.4"
+              stroke="#D4B97F"
+              strokeWidth="2.6"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 12, fontSize: 40, fontWeight: 700 }}>
-            <span>Revanta</span>
-            <span style={{ fontSize: 24, color: "#3FC3BD", letterSpacing: 4 }}>RCM</span>
-          </div>
+          <div style={{ fontSize: 50, letterSpacing: -1 }}>Revdian</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 76, fontWeight: 800, lineHeight: 1.05, letterSpacing: -2 }}>Smarter Revenue.</div>
-          <div style={{ fontSize: 76, fontWeight: 800, lineHeight: 1.05, letterSpacing: -2, color: "#3FC3BD" }}>
-            Stronger Healthcare.
+          <div style={{ fontSize: 104, lineHeight: 1, letterSpacing: -3 }}>Revenue,</div>
+          <div style={{ fontSize: 104, lineHeight: 1.05, letterSpacing: -3, color: "#D4B97F", fontStyle: "italic" }}>
+            guarded.
           </div>
-          <div style={{ marginTop: 28, fontSize: 30, color: "#C9D6E3" }}>
+          <div
+            style={{
+              marginTop: 36,
+              display: "flex",
+              alignItems: "center",
+              gap: 18,
+              fontSize: 26,
+              color: "#C3C9D6",
+              fontFamily: "sans-serif",
+              letterSpacing: 1,
+            }}
+          >
+            <div style={{ width: 48, height: 1, background: "#D4B97F" }} />
             Healthcare Revenue Cycle Management · Home Health · Hospice
           </div>
         </div>

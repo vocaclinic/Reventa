@@ -6,12 +6,12 @@ export function FaqSection({
   title = "Frequently Asked Questions",
   description,
   items,
-  tone = "offwhite",
+  tone = "ivory",
 }: {
   title?: string;
   description?: string;
   items: FaqItem[];
-  tone?: "white" | "offwhite";
+  tone?: "white" | "ivory";
 }) {
   const jsonLd = {
     "@context": "https://schema.org",

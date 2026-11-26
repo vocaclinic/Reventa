@@ -7,23 +7,24 @@ type Variant = "primary" | "accent" | "secondary" | "ghost-dark" | "link";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "group/btn inline-flex items-center justify-center gap-2 rounded-xl font-semibold whitespace-nowrap transition-all duration-200 ease-[var(--ease-brand)] focus-visible:outline-offset-4 disabled:pointer-events-none disabled:opacity-60";
+  "group/btn relative inline-flex items-center justify-center gap-2.5 rounded-full font-medium tracking-[-0.005em] whitespace-nowrap transition-all duration-300 ease-[var(--ease-brand)] focus-visible:outline-offset-4 disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-navy-800 text-white shadow-[0_1px_2px_rgb(16_42_67/0.2),0_8px_20px_-8px_rgb(16_42_67/0.5)] hover:bg-navy-900 hover:-translate-y-px",
+    "bg-ink-900 text-ivory shadow-[inset_0_1px_0_rgb(255_255_255/0.12),0_1px_2px_rgb(10_15_28/0.25),0_12px_28px_-12px_rgb(10_15_28/0.6)] hover:bg-ink-800 hover:-translate-y-px",
   accent:
-    "bg-teal-500 text-navy-950 shadow-[0_8px_24px_-10px_rgb(22_166_161/0.7)] hover:bg-teal-400 hover:-translate-y-px",
+    "bg-[linear-gradient(135deg,#F1E2BD_0%,#D4B97F_45%,#B8964F_100%)] text-ink-950 shadow-[inset_0_1px_0_rgb(255_255_255/0.5),0_14px_34px_-14px_rgb(184_150_79/0.85)] hover:-translate-y-px hover:brightness-[1.06]",
   secondary:
-    "border border-navy-200 bg-white text-navy-800 hover:border-navy-800 hover:bg-navy-50",
-  "ghost-dark": "border border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10",
-  link: "px-0! py-0! text-teal-700 hover:text-navy-800",
+    "border border-ink-900/15 bg-white/70 text-ink-900 backdrop-blur hover:border-ink-900/40 hover:bg-white",
+  "ghost-dark":
+    "border border-white/15 bg-white/[0.04] text-white backdrop-blur hover:border-gold-400/50 hover:bg-white/[0.08]",
+  link: "px-0! py-0! text-gold-700 hover:text-ink-900",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-10 px-4 text-sm",
-  md: "h-12 px-5 text-[0.95rem]",
-  lg: "h-14 px-7 text-base",
+  sm: "h-10 px-5 text-sm",
+  md: "h-12 px-6 text-[0.95rem]",
+  lg: "h-14 px-8 text-base",
 };
 
 export function buttonClasses({
@@ -42,7 +43,7 @@ function Arrow() {
   return (
     <ArrowRight
       aria-hidden="true"
-      className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5"
+      className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1"
     />
   );
 }

@@ -4,8 +4,8 @@ import { createMetadata } from "@/lib/seo";
 import { contactPlaceholders, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Privacy Policy | Revanta RCM",
-  description: "How Revanta RCM collects, uses, and protects information submitted through this website.",
+  title: "Privacy Policy | Revdian",
+  description: "How Revdian collects, uses, and protects information submitted through this website.",
   path: "/privacy-policy",
 });
 
@@ -17,12 +17,12 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       breadcrumb="Privacy Policy"
       title="Privacy Policy"
-      intro="This Privacy Policy explains how Revanta RCM collects, uses, and safeguards information you provide when you visit this website or contact us."
+      intro="This Privacy Policy explains how Revdian collects, uses, and safeguards information you provide when you visit this website or contact us."
     >
       <h2>1. Scope</h2>
       <p>
         This policy applies to information collected through this website, including the contact form. It does not
-        govern information Revanta RCM may process on behalf of clients under a services agreement or business
+        govern information Revdian may process on behalf of clients under a services agreement or business
         associate agreement; that information is handled according to the terms of those agreements.
       </p>
 
@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
 
       <h2>11. Contact us</h2>
       <p>
-        Questions about this policy can be directed to Revanta RCM at {email}, {address}, or through our{" "}
+        Questions about this policy can be directed to Revdian at {email}, {address}, or through our{" "}
         <Link href="/contact">contact page</Link>.
       </p>
     </LegalPage>

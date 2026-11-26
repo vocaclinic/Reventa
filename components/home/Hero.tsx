@@ -1,64 +1,101 @@
-import { Check } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Layout";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroDashboard } from "@/components/visuals/HeroDashboard";
 
-const assurances = ["Home Health & Hospice focus", "Technology-enabled workflows", "Human quality oversight"];
+const assurances = [
+  { label: "Home Health & Hospice", detail: "Specialty-first workflows" },
+  { label: "Technology-enabled", detail: "Automation that organizes work" },
+  { label: "Human oversight", detail: "Experienced people own quality" },
+];
+
+const workflowTerms = [
+  "Eligibility",
+  "PDGM",
+  "Notice of Admission",
+  "OASIS checks",
+  "Notice of Election",
+  "Benefit periods",
+  "Claims submission",
+  "A/R follow-up",
+  "Denial management",
+  "Payment posting",
+  "Revenue reporting",
+];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-offwhite">
-      <div aria-hidden="true" className="bg-grid mask-fade-y absolute inset-0 -z-10" />
+    <section className="bg-ink-aurora relative isolate overflow-hidden text-ink-200">
+      <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />
+      <div aria-hidden="true" className="bg-grid-dark mask-fade-y pointer-events-none absolute inset-0 -z-10" />
       <div
         aria-hidden="true"
-        className="absolute top-[-12rem] right-[-8rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-teal-100/80 blur-3xl"
+        className="pointer-events-none absolute top-24 -right-40 -z-10 h-[38rem] w-[38rem] rounded-full border border-gold-400/10"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-[-14rem] left-[-10rem] -z-10 h-[30rem] w-[30rem] rounded-full bg-navy-100/80 blur-3xl"
+        className="pointer-events-none absolute top-44 -right-20 -z-10 h-[30rem] w-[30rem] rounded-full border border-gold-400/[0.07]"
       />
 
-      <Container className="grid items-center gap-16 pt-14 pb-20 sm:pt-20 lg:grid-cols-[1.12fr_1fr] lg:gap-12 lg:pt-24 lg:pb-28">
+      <Container className="grid items-center gap-20 pt-16 pb-20 sm:pt-24 lg:grid-cols-[1.08fr_1fr] lg:gap-14 lg:pt-28 lg:pb-28">
         <Reveal>
-          <p className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/80 py-1.5 pr-4 pl-2 text-[0.82rem] font-semibold text-navy-700 shadow-soft">
-            <span className="rounded-full bg-navy-800 px-2.5 py-0.5 text-[0.7rem] font-semibold tracking-wide text-teal-400 uppercase">
-              RCM
+          <p className="inline-flex items-center gap-2.5 rounded-full border border-gold-400/25 bg-white/[0.03] py-1.5 pr-4 pl-1.5 text-[0.8rem] font-medium text-ink-100 backdrop-blur">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gold-400/15 text-gold-400">
+              <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5" />
             </span>
             Healthcare Revenue Cycle Management
           </p>
-          <h1 className="mt-7 text-[2.6rem] leading-[1.05] font-extrabold sm:text-6xl lg:text-[3.2rem] xl:text-[3.7rem]">
-            Smarter Revenue.
+
+          <h1 className="mt-9 text-[3.6rem] leading-[0.95] font-normal text-white sm:text-[5.2rem] lg:text-[5.4rem] xl:text-[6.4rem]">
+            Revenue,
             <br />
-            <span className="text-teal-600 xl:whitespace-nowrap">Stronger Healthcare.</span>
+            <em className="text-gold-gradient pr-2 font-normal">guarded.</em>
           </h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-body sm:text-xl">
-            Revanta RCM helps healthcare providers simplify revenue cycle operations, streamline billing
-            workflows, and gain greater control over their financial performance through expertise,
-            technology, and transparent support.
+
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-200 sm:text-xl">
+            Revdian is the guardian of your revenue cycle. We bring structure, vigilance, and transparent reporting
+            to every claim, so Home Health and Hospice providers can focus on care.
           </p>
+
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact" size="lg" arrow>
-              Schedule a Consultation
+            <ButtonLink href="/contact" variant="accent" size="lg" arrow>
+              Book a Consultation
             </ButtonLink>
-            <ButtonLink href="/services" variant="secondary" size="lg">
+            <ButtonLink href="/services" variant="ghost-dark" size="lg">
               Explore Our Services
             </ButtonLink>
           </div>
-          <ul className="mt-10 flex flex-col gap-x-6 gap-y-3 border-t border-line pt-7 sm:flex-row sm:flex-wrap">
+
+          <dl className="mt-14 grid max-w-xl grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3 sm:gap-8">
             {assurances.map((item) => (
-              <li key={item} className="flex items-center gap-2 text-[0.92rem] font-medium text-navy-700">
-                <Check aria-hidden="true" className="h-4 w-4 text-teal-600" strokeWidth={2.5} />
-                {item}
-              </li>
+              <div key={item.label}>
+                <dt className="font-display text-[1.05rem] leading-snug text-white">{item.label}</dt>
+                <dd className="mt-1 text-[0.85rem] text-ink-200/70">{item.detail}</dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </Reveal>
 
         <Reveal delay={0.15}>
           <HeroDashboard />
         </Reveal>
       </Container>
+
+      {/* Workflow ticker */}
+      <div className="border-t border-white/[0.07] bg-ink-950/40 py-5 backdrop-blur">
+        <p className="sr-only">Workflows we support: {workflowTerms.join(", ")}.</p>
+        <div aria-hidden="true" className="mask-fade-x flex overflow-hidden">
+          <div className="animate-marquee flex shrink-0 items-center gap-10 pr-10 motion-reduce:animate-none">
+            {[...workflowTerms, ...workflowTerms].map((term, index) => (
+              <span key={`${term}-${index}`} className="flex items-center gap-10 whitespace-nowrap">
+                <span className="font-display text-xl text-ink-200/70 italic">{term}</span>
+                <span className="h-1.5 w-1.5 rotate-45 bg-gold-400/60" />
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

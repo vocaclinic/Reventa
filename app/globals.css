@@ -1,41 +1,65 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Revanta RCM design tokens
-   Navy is the dominant brand color, teal is the accent.
+   Revdian design tokens
+   Ink (deep midnight) is the dominant brand color, champagne gold is the
+   accent, and warm ivory is the paper. Headlines are set in an editorial
+   serif (Newsreader); interface and body text use Geist.
    ------------------------------------------------------------------ */
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 @theme {
-  --color-navy-950: #07182a;
-  --color-navy-900: #0b1f33;
-  --color-navy-800: #102a43;
-  --color-navy-700: #1a3a5a;
-  --color-navy-600: #284b6e;
-  --color-navy-200: #c9d6e3;
-  --color-navy-100: #e4ebf2;
-  --color-navy-50: #f1f5f9;
+  --color-ink-950: #05080f;
+  --color-ink-900: #0a0f1c;
+  --color-ink-800: #111a2e;
+  --color-ink-700: #1f2a42;
+  --color-ink-600: #34425e;
+  --color-ink-200: #c3c9d6;
+  --color-ink-100: #e4e6ec;
+  --color-ink-50: #f2f1ed;
 
-  --color-teal-700: #0d7a76;
-  --color-teal-600: #11908b;
-  --color-teal-500: #16a6a1;
-  --color-teal-400: #3fc3bd;
-  --color-teal-200: #b5ebe6;
-  --color-teal-100: #ddf5f2;
-  --color-teal-50: #effaf8;
+  --color-gold-700: #7f6128;
+  --color-gold-600: #9c7a3c;
+  --color-gold-500: #b8964f;
+  --color-gold-400: #d4b97f;
+  --color-gold-200: #e9dcbc;
+  --color-gold-100: #f3ebd8;
+  --color-gold-50: #faf6ec;
 
-  --color-offwhite: #f7fafc;
-  --color-body: #475569;
-  --color-muted: #64748b;
-  --color-line: #e2e8f0;
+  --color-ivory: #faf8f3;
+  --color-body: #4a5266;
+  --color-muted: #6b7184;
+  --color-line: #e8e3d8;
 
-  --shadow-soft: 0 1px 2px rgb(16 42 67 / 0.04), 0 8px 24px -12px rgb(16 42 67 / 0.12);
-  --shadow-lift: 0 2px 6px rgb(16 42 67 / 0.05), 0 28px 56px -24px rgb(16 42 67 / 0.28);
+  --shadow-soft: 0 1px 2px rgb(10 15 28 / 0.04), 0 12px 32px -18px rgb(10 15 28 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(10 15 28 / 0.05), 0 40px 80px -36px rgb(10 15 28 / 0.38);
+  --shadow-glow: 0 0 0 1px rgb(212 185 127 / 0.18), 0 30px 80px -30px rgb(184 150 79 / 0.45);
 
   --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 48s linear infinite;
+  --animate-shimmer: shimmer 3.2s var(--ease-brand) infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
 }
 
 @layer base {
@@ -47,9 +71,10 @@
   }
 
   body {
-    background-color: var(--color-white);
+    background-color: var(--color-ivory);
     color: var(--color-body);
     font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
   }
 
   h1,
@@ -57,9 +82,14 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    color: var(--color-navy-800);
-    letter-spacing: -0.022em;
+    font-weight: 500;
+    color: var(--color-ink-800);
+    letter-spacing: -0.018em;
     text-wrap: balance;
+  }
+
+  h1 {
+    letter-spacing: -0.028em;
   }
 
   p {
@@ -67,18 +97,18 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal-500);
+    outline: 2px solid var(--color-gold-500);
     outline-offset: 3px;
     border-radius: 6px;
   }
 
   [id] {
-    scroll-margin-top: 104px;
+    scroll-margin-top: 112px;
   }
 
   ::selection {
-    background-color: var(--color-teal-100);
-    color: var(--color-navy-900);
+    background-color: var(--color-gold-200);
+    color: var(--color-ink-900);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -95,19 +125,46 @@
   }
 }
 
-/* Subtle technical grid used behind heroes and dark panels */
+/* Fine technical grid used behind light panels */
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, rgb(16 42 67 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(16 42 67 / 0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgb(10 15 28 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 15 28 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 @utility bg-grid-dark {
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Film-grain texture that gives dark surfaces a printed, tactile finish */
+@utility bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Signature dark surface: deep ink with a warm gold aurora */
+@utility bg-ink-aurora {
+  background-color: var(--color-ink-950);
+  background-image:
+    radial-gradient(60rem 32rem at 85% -10%, rgb(184 150 79 / 0.22), transparent 60%),
+    radial-gradient(48rem 28rem at -10% 110%, rgb(52 66 94 / 0.55), transparent 60%),
+    linear-gradient(180deg, var(--color-ink-950), var(--color-ink-900));
+}
+
+/* Gold gradient text for single accent words in headlines */
+@utility text-gold-gradient {
+  background-image: linear-gradient(100deg, #f1e2bd 0%, #d4b97f 38%, #b8964f 70%, #e9d5a4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline gold rule */
+@utility rule-gold {
+  background-image: linear-gradient(90deg, transparent, rgb(212 185 127 / 0.7), transparent);
 }
 
 @utility mask-fade-y {
@@ -118,23 +175,25 @@
   mask-image: linear-gradient(to bottom, black 55%, transparent);
 }
 
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
 /* Long-form legal content */
 @layer components {
   .legal-content {
     color: var(--color-body);
-    line-height: 1.75;
+    line-height: 1.8;
   }
   .legal-content h2 {
-    margin-top: 2.75rem;
+    margin-top: 3rem;
     margin-bottom: 0.875rem;
-    font-size: 1.375rem;
-    font-weight: 700;
+    font-size: 1.6rem;
   }
   .legal-content h3 {
     margin-top: 1.75rem;
     margin-bottom: 0.5rem;
-    font-size: 1.0625rem;
-    font-weight: 700;
+    font-size: 1.2rem;
   }
   .legal-content p {
     margin-bottom: 1rem;
@@ -148,15 +207,15 @@
     margin-bottom: 0.4rem;
   }
   .legal-content li::marker {
-    color: var(--color-teal-500);
+    color: var(--color-gold-500);
   }
   .legal-content a {
-    color: var(--color-teal-700);
+    color: var(--color-gold-700);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
   .legal-content strong {
-    color: var(--color-navy-800);
+    color: var(--color-ink-800);
   }
 }
 

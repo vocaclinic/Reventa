@@ -1,6 +1,6 @@
-# Revanta RCM — Website
+# Revdian — Website
 
-Marketing website for **Revanta RCM**, a healthcare revenue cycle management company. It is built with Next.js (App Router), React, TypeScript, Tailwind CSS v4, Lucide icons and Framer Motion.
+Marketing website for **Revdian** (revenue + guardian; tagline "Revenue, Guarded."), a healthcare revenue cycle management company. It is built with Next.js (App Router), React, TypeScript, Tailwind CSS v4, Lucide icons and Framer Motion.
 
 ## Pages
 
@@ -41,7 +41,7 @@ Edit **`lib/site.ts`**:
 
 ```ts
 contact: {
-  email: "hello@yourdomain.com",
+  email: "hello@revdian.com",
   phone: "+1 (555) 010-0000",
   address: "123 Example Street, Suite 100, City, ST 00000",
 },
@@ -54,7 +54,7 @@ While a value is an empty string, the site shows a clearly marked placeholder su
 
 ### Site URL (canonical links, sitemap, Open Graph)
 
-Set `NEXT_PUBLIC_SITE_URL` to the production domain, for example `https://www.revantarcm.com`. Until then, canonical URLs use the placeholder `https://www.example.com`.
+Set `NEXT_PUBLIC_SITE_URL` to the production domain, for example `https://www.revdian.com`. Until then, canonical URLs use the placeholder `https://www.example.com`.
 
 ### Contact form submission
 
@@ -85,13 +85,13 @@ Built-in spam protection is a hidden honeypot field plus server-side validation.
 | Navigation and footer links | `lib/navigation.ts` |
 | Homepage sections | `components/home/` |
 | Page content, FAQs, metadata | `app/<route>/page.tsx` |
-| Colors, fonts, shadows | `app/globals.css` (`@theme` tokens) and `app/layout.tsx` (fonts) |
+| Colors (ink, gold, ivory), fonts (Newsreader serif + Geist), shadows | `app/globals.css` (`@theme` tokens) and `app/layout.tsx` (fonts) |
 
 Each page sets its title, description and canonical URL with `createMetadata()` from `lib/seo.ts`. FAQ sections also output FAQPage structured data automatically.
 
 ## Logo, images and visuals
 
-- **Logo:** `components/brand/Logo.tsx` contains the SVG "R" mark (`LogoMark`) and the wordmark, with `tone="light"` and `tone="dark"` variants. The favicon is `app/icon.svg`, and the social sharing image is `app/opengraph-image.tsx`. To use a designer-supplied logo, replace the SVG paths in all three files, or swap `LogoMark` for a `next/image` pointing at a file in `public/`.
+- **Logo:** `components/brand/Logo.tsx` contains the shield "R" mark (`LogoMark`, geometry in `components/brand/paths.ts`) and the serif wordmark, with `tone="light"` and `tone="dark"` variants. The favicon is `app/icon.svg`, and the social sharing image is `app/opengraph-image.tsx`. To use a designer-supplied logo, replace the SVG paths in all three files, or swap `LogoMark` for a `next/image` pointing at a file in `public/`.
 - **Illustrations:** the dashboard, trackers and diagrams in `components/visuals/` are built in code, so they stay crisp and load quickly. They are labeled "Illustrative" and contain no real data. Keep them that way, or replace them with real screenshots only after confirming you have permission and that the screenshots contain no client or patient data.
 - **Photography:** the site currently uses no photos. To add team or office photos, put them in `public/images/` and render them with `next/image`, using descriptive `alt` text. Use only photos you have rights to, and avoid stock images that imply staff or clients you don't have.
 
