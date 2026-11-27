@@ -54,7 +54,7 @@ While the email or address is an empty string, the site shows a clearly marked p
 
 ### Site URL (canonical links, sitemap, Open Graph)
 
-Set `NEXT_PUBLIC_SITE_URL` to the production domain, for example `https://www.revdian.com`. Until then, canonical URLs use the placeholder `https://www.example.com`.
+Canonical URLs, the sitemap and Open Graph tags use `https://revdian.com` by default. Set `NEXT_PUBLIC_SITE_URL` only to override it (for example, if `www.revdian.com` becomes the primary domain in Vercel).
 
 ### Contact form submission
 
@@ -92,7 +92,7 @@ Each page sets its title, description and canonical URL with `createMetadata()` 
 
 ## Logo, images and visuals
 
-- **Logo:** `components/brand/Logo.tsx` contains the shield "R" mark (`LogoMark`, geometry in `components/brand/paths.ts`) and the serif wordmark, with `tone="light"` and `tone="dark"` variants. The favicon is `app/icon.svg`, and the social sharing image is `app/opengraph-image.tsx`. To use a designer-supplied logo, replace the SVG paths in all three files, or swap `LogoMark` for a `next/image` pointing at a file in `public/`.
+- **Logo:** `components/brand/Logo.tsx` contains the "+RV" symbol (`LogoMark`, geometry and colours in `components/brand/paths.ts`) and the Plus Jakarta Sans wordmark, with `tone="light"` and `tone="dark"` variants and an optional `tagline`. The symbol was redrawn as SVG from the approved artwork (`Final logo — light and dark.pdf`, which only contains a raster image). The favicon is `app/icon.svg`, and the social sharing image is `app/opengraph-image.tsx`. If the designer supplies original vector files, replace the paths in `paths.ts` and `app/icon.svg`.
 - **Illustrations:** the dashboard, trackers and diagrams in `components/visuals/` are built in code, so they stay crisp and load quickly. They are labeled "Illustrative" and contain no real data. Keep them that way, or replace them with real screenshots only after confirming you have permission and that the screenshots contain no client or patient data.
 - **Photography:** the site currently uses no photos. To add team or office photos, put them in `public/images/` and render them with `next/image`, using descriptive `alt` text. Use only photos you have rights to, and avoid stock images that imply staff or clients you don't have.
 

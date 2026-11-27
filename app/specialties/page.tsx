@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Building2, HeartHandshake, House, Smile, Stethoscope, Users } from "lucide-react";
+import { ArrowRight, HeartHandshake, House } from "lucide-react";
 import { CheckList } from "@/components/shared/CheckList";
 import { CtaSection } from "@/components/shared/CtaSection";
 import { PageHero } from "@/components/shared/PageHero";
@@ -11,7 +11,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Healthcare Specialties We Support | Revdian",
   description:
-    "Revdian provides specialty-focused revenue cycle management for Home Health agencies and Hospice providers, with plans to support dental practices, medical practices, clinics, and specialty groups.",
+    "Revdian provides specialty-focused revenue cycle management for Home Health agencies and Hospice providers, with workflows built around each specialty's Medicare billing rules.",
   path: "/specialties",
 });
 
@@ -22,13 +22,6 @@ const comparison = [
   { label: "Core documentation", homeHealth: "OASIS, Plan of Care and signed orders, face-to-face encounter", hospice: "Election statement, certification of terminal illness, plan of care, face-to-face before period 3+" },
   { label: "Billing cadence", homeHealth: "Claim per 30-day period of care", hospice: "Typically monthly, processed in sequence" },
   { label: "Payment adjustments to watch", homeHealth: "Late NOA reductions, LUPAs", hospice: "Late NOE non-covered days, aggregate and inpatient caps" },
-];
-
-const future = [
-  { icon: Smile, title: "Dental Practices", description: "Billing and A/R support for dental offices and groups." },
-  { icon: Stethoscope, title: "Medical Practices", description: "Revenue cycle support for physician and multi-provider practices." },
-  { icon: Building2, title: "Clinics", description: "Structured billing workflows for outpatient and community clinics." },
-  { icon: Users, title: "Specialty Groups", description: "Support for other healthcare specialties with defined RCM needs." },
 ];
 
 export default function SpecialtiesPage() {
@@ -147,41 +140,9 @@ export default function SpecialtiesPage() {
         </Container>
       </Section>
 
-      <Section labelledBy="future-heading">
-        <Container>
-          <SectionHeading
-            id="future-heading"
-            eyebrow="Looking ahead"
-            title="Growing Into Additional Specialties"
-            description="Revdian is designed to expand beyond Home Health and Hospice. We are building toward supporting the following areas. If your organization works in one of them, we welcome a conversation about your needs."
-          />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {future.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delay={index * 0.06} className="h-full">
-                  <article className="h-full rounded-2xl border border-dashed border-royal-200 bg-white p-7">
-                    <div className="flex items-start justify-between">
-                      <IconTile>
-                        <Icon aria-hidden="true" />
-                      </IconTile>
-                      <span className="rounded-full bg-royal-50 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-royal-700 uppercase">
-                        Planned
-                      </span>
-                    </div>
-                    <h3 className="mt-6 text-lg font-medium">{item.title}</h3>
-                    <p className="mt-2 leading-relaxed text-body">{item.description}</p>
-                  </article>
-                </Reveal>
-              );
-            })}
-          </div>
-        </Container>
-      </Section>
-
       <CtaSection
         title="Let's Discuss Your Specialty's Revenue Cycle."
-        description="Whether you're a Home Health agency, a hospice, or another healthcare organization, tell us about your workflows and we'll talk through how we may be able to help."
+        description="Whether you're a Home Health agency or a hospice, tell us about your workflows and we'll talk through how we may be able to help."
       />
     </>
   );

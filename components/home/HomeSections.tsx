@@ -350,15 +350,15 @@ export function SpecialtiesSection() {
                 <Layers aria-hidden="true" />
               </IconTile>
               <p className="text-[0.95rem] text-body">
-                <span className="font-medium text-royal-900">Growing with healthcare.</span> We plan to extend our
-                support to dental practices, medical practices, clinics, and specialty groups.
+                <span className="font-medium text-royal-900">Specialists by design.</span> Home Health and Hospice
+                bill under different rules, so we build separate workflows for each.
               </p>
             </div>
             <Link
               href="/specialties"
               className="inline-flex shrink-0 items-center gap-1.5 text-[0.94rem] font-medium text-royal-900 hover:text-gold-700"
             >
-              View all specialties <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              Compare the specialties <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
         </Reveal>
@@ -393,7 +393,7 @@ export function WhyRevdian() {
             eyebrow="Why Revdian"
             title={
               <>
-                Why providers trust Revdian <em className="text-gold-gradient pr-1">to stand guard.</em>
+                Why providers choose Revdian <em className="text-gold-gradient pr-1">to stand guard.</em>
               </>
             }
             description="We believe effective revenue cycle management starts with understanding how healthcare organizations operate. Our approach combines structured processes, operational expertise, and technology to support more organized and transparent revenue operations."

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Newsreader } from "next/font/google";
+import { Geist, Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Providers } from "@/components/layout/Providers";
@@ -17,6 +17,14 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   style: ["normal", "italic"],
   axes: ["opsz"],
+  display: "swap",
+});
+
+/** Logo wordmark typeface ("Revdian" and the "Revenue, guarded." tagline). */
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  weight: ["600", "700"],
   display: "swap",
 });
 
@@ -43,7 +51,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-US" className={`${geist.variable} ${newsreader.variable}`}>
+    <html lang="en-US" className={`${geist.variable} ${newsreader.variable} ${plusJakarta.variable}`}>
       <head>
         <noscript>
           {/* Without JavaScript, scroll-reveal content must not stay hidden. */}

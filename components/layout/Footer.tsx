@@ -46,7 +46,7 @@ export function Footer() {
 
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-4">
-            <Logo tone="dark" />
+            <Logo tone="dark" tagline />
             <p className="mt-6 max-w-sm text-[0.94rem] leading-relaxed text-royal-100/85">
               Technology-enabled revenue cycle management support for Home Health, Hospice, and growing healthcare
               organizations across the United States.

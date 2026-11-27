@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Revenue, Guarded.",
   description:
     "Revdian guards the revenue cycle for Home Health, Hospice, and healthcare providers across the United States with technology-enabled billing, claims, A/R, and denial management support.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://revdian.com").replace(/\/$/, ""),
 
   contact: {
     email: "team@revdian.com",

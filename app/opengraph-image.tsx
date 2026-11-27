@@ -1,5 +1,18 @@
 import { ImageResponse } from "next/og";
-import { R_BOWL_PATH, R_LEG_PATH, SHIELD_PATH } from "@/components/brand/paths";
+import {
+  CROSS_GRADIENT,
+  CROSS_PATH,
+  MARK_BODY_WIDTH,
+  MARK_VIEWBOX,
+  R_BODY_PATH,
+  R_LEG_PATH,
+  V_ARM_GRADIENT_Y,
+  V_ARM_PATH,
+  V_ARM_WIDTH,
+  markColors,
+} from "@/components/brand/paths";
+
+const mark = markColors.dark;
 import { siteConfig } from "@/lib/site";
 
 export const alt = `${siteConfig.name} — ${siteConfig.tagline} Healthcare revenue cycle management.`;
@@ -25,26 +38,31 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          <svg width="76" height="76" viewBox="0 0 40 40">
-            <path d={SHIELD_PATH} fill="#1C335F" stroke="#D4AF67" strokeWidth="1.3" />
-            <path
-              d={R_BOWL_PATH}
-              fill="none"
-              stroke="#F7F4ED"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d={R_LEG_PATH}
-              fill="none"
-              stroke="#D4AF67"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+          <svg width="84" height="84" viewBox={MARK_VIEWBOX}>
+            <defs>
+              <linearGradient
+                id="arm"
+                gradientUnits="userSpaceOnUse"
+                x1="0"
+                y1={V_ARM_GRADIENT_Y[0]}
+                x2="0"
+                y2={V_ARM_GRADIENT_Y[1]}
+              >
+                <stop offset="0" stopColor={mark.armTop} />
+                <stop offset="1" stopColor={mark.body} />
+              </linearGradient>
+              <linearGradient id="cross" gradientUnits="userSpaceOnUse" {...CROSS_GRADIENT}>
+                <stop offset="0" stopColor={mark.cross[0]} />
+                <stop offset="0.5" stopColor={mark.cross[1]} />
+                <stop offset="1" stopColor={mark.cross[2]} />
+              </linearGradient>
+            </defs>
+            <path d={R_BODY_PATH} fill="none" stroke={mark.body} strokeWidth={MARK_BODY_WIDTH} />
+            <path d={R_LEG_PATH} fill={mark.body} />
+            <path d={V_ARM_PATH} fill="none" stroke="url(#arm)" strokeWidth={V_ARM_WIDTH} strokeLinecap="round" />
+            <path d={CROSS_PATH} fill="url(#cross)" />
           </svg>
-          <div style={{ fontSize: 50, letterSpacing: -1 }}>Revdian</div>
+          <div style={{ fontSize: 52, fontWeight: 700, letterSpacing: -1, fontFamily: "sans-serif" }}>Revdian</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 104, lineHeight: 1, letterSpacing: -3 }}>Revenue,</div>

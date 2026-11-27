@@ -6,7 +6,6 @@
 export const organizationTypes = [
   "Home Health Agency",
   "Hospice",
-  "Dental Practice",
   "Medical Practice",
   "Other",
 ] as const;

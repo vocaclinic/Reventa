@@ -92,9 +92,8 @@ export default function AboutPage() {
               bring more structure, consistency, and visibility to their billing and revenue operations.
             </p>
             <p>
-              We are beginning with Home Health and Hospice — two specialties with distinct reimbursement models and
-              documentation requirements — and plan to extend our support to dental practices, medical practices,
-              clinics, and other specialty groups over time.
+              We focus on Home Health and Hospice — two specialties with distinct reimbursement models and
+              documentation requirements — so that every workflow we run is built around the rules that apply to them.
             </p>
             <p>
               Our work combines revenue cycle knowledge, defined processes, and modern technology, with experienced people
