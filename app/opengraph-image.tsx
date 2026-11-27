@@ -17,7 +17,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 84px",
-          background: "#0A1229",
+          background: "#243F70",
           backgroundImage:
             "radial-gradient(circle at 88% 0%, rgba(212,175,103,0.38), transparent 48%), radial-gradient(circle at 0% 100%, rgba(36,63,112,0.7), transparent 52%)",
           color: "#FFFFFF",
@@ -26,7 +26,7 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <svg width="76" height="76" viewBox="0 0 40 40">
-            <path d={SHIELD_PATH} fill="#182850" stroke="#D4AF67" strokeWidth="1.3" />
+            <path d={SHIELD_PATH} fill="#1C335F" stroke="#D4AF67" strokeWidth="1.3" />
             <path
               d={R_BOWL_PATH}
               fill="none"
@@ -58,7 +58,7 @@ export default function OpengraphImage() {
               alignItems: "center",
               gap: 18,
               fontSize: 26,
-              color: "#C5CDDC",
+              color: "#C8D1E2",
               fontFamily: "sans-serif",
               letterSpacing: 1,
             }}

@@ -20,8 +20,8 @@ export function LogoMark({ tone = "light", className }: { tone?: Tone; className
     >
       <defs>
         <linearGradient id={`${id}-fill`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={tone === "light" ? "#243F70" : "#1C2E58"} />
-          <stop offset="100%" stopColor={tone === "light" ? "#101C3A" : "#0A1229"} />
+          <stop offset="0%" stopColor={tone === "light" ? "#34528A" : "#1C335F"} />
+          <stop offset="100%" stopColor={tone === "light" ? "#243F70" : "#172B52"} />
         </linearGradient>
         <linearGradient id={`${id}-gold`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#F3E3BA" />
@@ -69,7 +69,7 @@ export function Logo({
       <span
         className={cn(
           "font-display text-[1.6rem] leading-none font-medium tracking-[-0.02em]",
-          tone === "light" ? "text-ink-900" : "text-white",
+          tone === "light" ? "text-royal-700" : "text-white",
         )}
       >
         Revdian

@@ -37,12 +37,12 @@ export function Manifesto() {
             <div aria-hidden="true" className="bg-grid mask-fade-b absolute inset-0" />
             <div className="relative">
               <LogoMark className="h-14 w-14" />
-              <p className="mt-10 font-display text-5xl tracking-[-0.03em] text-ink-900 sm:text-6xl">
+              <p className="mt-10 font-display text-5xl tracking-[-0.03em] text-royal-900 sm:text-6xl">
                 Rev<span className="text-gold-500">·</span>di<span className="text-gold-500">·</span>an
               </p>
               <p className="mt-3 text-xs tracking-[0.24em] text-muted uppercase">Noun · Our name</p>
               <div aria-hidden="true" className="rule-gold my-8 h-px w-full" />
-              <p className="font-display text-2xl leading-snug text-ink-800 italic">
+              <p className="font-display text-2xl leading-snug text-royal-800 italic">
                 From <span className="text-gold-700 not-italic">revenue</span> and{" "}
                 <span className="text-gold-700 not-italic">guardian</span>: one who stands watch over the revenue a
                 healthcare provider has earned.
@@ -145,7 +145,7 @@ export function ValueProposition() {
                 <Reveal delay={index * 0.06}>
                   <div className="flex items-center justify-between">
                     <Icon aria-hidden="true" className="h-6 w-6 text-gold-600" strokeWidth={1.5} />
-                    <span aria-hidden="true" className="font-display text-lg text-ink-200 italic">
+                    <span aria-hidden="true" className="font-display text-lg text-royal-200 italic">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -186,10 +186,10 @@ export function ServicesOverview() {
                     className="rule-gold absolute inset-x-10 top-0 h-px opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
                   <div className="flex items-start justify-between">
-                    <IconTile className="transition-colors duration-500 group-hover:bg-ink-900 group-hover:text-gold-400 group-hover:ring-ink-900">
+                    <IconTile className="transition-colors duration-500 group-hover:bg-royal-900 group-hover:text-gold-400 group-hover:ring-royal-900">
                       <Icon aria-hidden="true" />
                     </IconTile>
-                    <span aria-hidden="true" className="font-display text-3xl text-ink-200 italic">
+                    <span aria-hidden="true" className="font-display text-3xl text-royal-200 italic">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -197,7 +197,7 @@ export function ServicesOverview() {
                   <p className="mt-3 leading-relaxed text-body">{service.description}</p>
                   <ul className="mt-7 space-y-3 border-t border-line pt-7">
                     {service.points.map((point) => (
-                      <li key={point} className="flex items-center gap-3 text-[0.93rem] text-ink-700">
+                      <li key={point} className="flex items-center gap-3 text-[0.93rem] text-royal-700">
                         <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-500" />
                         {point}
                       </li>
@@ -205,7 +205,7 @@ export function ServicesOverview() {
                   </ul>
                   <Link
                     href={service.href}
-                    className="mt-auto inline-flex items-center gap-1.5 pt-8 text-[0.94rem] font-medium text-ink-900 transition-colors hover:text-gold-700"
+                    className="mt-auto inline-flex items-center gap-1.5 pt-8 text-[0.94rem] font-medium text-royal-900 transition-colors hover:text-gold-700"
                   >
                     Learn more
                     <span className="sr-only"> about {service.title}</span>
@@ -246,7 +246,7 @@ export function SpecialtiesSection() {
 
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           <Reveal className="h-full">
-            <article className="bg-ink-aurora relative isolate flex h-full flex-col overflow-hidden rounded-[32px] p-8 text-ink-200 shadow-lift sm:p-12">
+            <article className="bg-royal-stage relative isolate flex h-full flex-col overflow-hidden rounded-[32px] p-8 text-royal-200 shadow-lift sm:p-12">
               <div aria-hidden="true" className="bg-grain absolute inset-0 -z-10" />
               <div aria-hidden="true" className="bg-grid-dark mask-fade-b absolute inset-0 -z-10" />
               <div className="flex items-center justify-between">
@@ -260,7 +260,7 @@ export function SpecialtiesSection() {
                 {["PDGM", "NOA", "OASIS", "30-day periods"].map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-gold-400/25 bg-white/[0.03] px-3 py-1 text-xs font-medium tracking-wide text-ink-100"
+                    className="rounded-full border border-gold-400/25 bg-white/[0.03] px-3 py-1 text-xs font-medium tracking-wide text-royal-100"
                   >
                     {tag}
                   </li>
@@ -300,7 +300,7 @@ export function SpecialtiesSection() {
                 className="absolute -right-24 -bottom-24 -z-10 h-80 w-80 rounded-full bg-gold-100 blur-3xl"
               />
               <div className="flex items-center justify-between">
-                <IconTile tone="ink">
+                <IconTile tone="royal">
                   <HeartHandshake aria-hidden="true" />
                 </IconTile>
                 <span className="font-display text-lg text-gold-700 italic">Specialty 02</span>
@@ -310,7 +310,7 @@ export function SpecialtiesSection() {
                 {["NOE", "Benefit periods", "Levels of care", "Monthly claims"].map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-gold-200 bg-white px-3 py-1 text-xs font-medium tracking-wide text-ink-700"
+                    className="rounded-full border border-gold-200 bg-white px-3 py-1 text-xs font-medium tracking-wide text-royal-700"
                   >
                     {tag}
                   </li>
@@ -350,13 +350,13 @@ export function SpecialtiesSection() {
                 <Layers aria-hidden="true" />
               </IconTile>
               <p className="text-[0.95rem] text-body">
-                <span className="font-medium text-ink-900">Growing with healthcare.</span> We plan to extend our
+                <span className="font-medium text-royal-900">Growing with healthcare.</span> We plan to extend our
                 support to dental practices, medical practices, clinics, and specialty groups.
               </p>
             </div>
             <Link
               href="/specialties"
-              className="inline-flex shrink-0 items-center gap-1.5 text-[0.94rem] font-medium text-ink-900 hover:text-gold-700"
+              className="inline-flex shrink-0 items-center gap-1.5 text-[0.94rem] font-medium text-royal-900 hover:text-gold-700"
             >
               View all specialties <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
@@ -379,7 +379,7 @@ const whyPoints = [
 
 export function WhyRevdian() {
   return (
-    <Section tone="ink" labelledBy="why-heading">
+    <Section tone="royal" labelledBy="why-heading">
       <div aria-hidden="true" className="bg-grid-dark mask-fade-y absolute inset-0 -z-10" />
       <Container className="relative grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
         <Reveal className="order-2 lg:order-1">
@@ -405,7 +405,7 @@ export function WhyRevdian() {
                   <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-400" />
                   <span>
                     <span className="block font-medium text-white">{point.title}</span>
-                    <span className="mt-1 block text-[0.92rem] leading-relaxed text-ink-200/80">{point.text}</span>
+                    <span className="mt-1 block text-[0.92rem] leading-relaxed text-royal-200/80">{point.text}</span>
                   </span>
                 </Reveal>
               </li>
@@ -510,11 +510,11 @@ export function TechnologySection() {
         </div>
         <Reveal>
           <div className="mt-6 grid gap-4 rounded-[28px] border border-gold-200 bg-gold-50 p-6 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-6 sm:p-8">
-            <IconTile tone="ink">
+            <IconTile tone="royal">
               <BadgeCheck aria-hidden="true" />
             </IconTile>
-            <p className="leading-relaxed text-ink-700">
-              <span className="font-display text-xl text-ink-900">
+            <p className="leading-relaxed text-royal-700">
+              <span className="font-display text-xl text-royal-900">
                 AI and automation support our people. They don&apos;t replace them.
               </span>{" "}
               Where we use automation or AI-enabled tools, they help organize and prioritize work. Billing decisions,

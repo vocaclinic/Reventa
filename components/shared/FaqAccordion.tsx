@@ -26,14 +26,14 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? null : index)}
-                className="flex w-full items-start justify-between gap-6 px-6 py-5 text-left font-display text-[1.3rem] leading-snug font-medium text-ink-900 transition-colors hover:text-gold-700 sm:px-9 sm:py-7"
+                className="flex w-full items-start justify-between gap-6 px-6 py-5 text-left font-display text-[1.3rem] leading-snug font-medium text-royal-900 transition-colors hover:text-gold-700 sm:px-9 sm:py-7"
               >
                 {item.question}
                 <span
                   aria-hidden="true"
                   className={cn(
                     "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full ring-1 transition-all duration-300",
-                    open ? "rotate-45 bg-ink-900 text-gold-400 ring-ink-900" : "text-ink-700 ring-ink-200",
+                    open ? "rotate-45 bg-royal-900 text-gold-400 ring-royal-900" : "text-royal-700 ring-royal-200",
                   )}
                 >
                   <Plus className="h-4 w-4" />

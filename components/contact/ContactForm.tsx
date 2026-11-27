@@ -35,14 +35,14 @@ const fieldOrder: ContactField[] = [
 ];
 
 const inputBase =
-  "block w-full rounded-xl border bg-white px-4 text-[0.95rem] text-ink-800 placeholder:text-muted/70 transition-colors focus:outline-none focus:ring-4";
+  "block w-full rounded-xl border bg-white px-4 text-[0.95rem] text-royal-800 placeholder:text-muted/70 transition-colors focus:outline-none focus:ring-4";
 
 function inputClass(invalid: boolean) {
   return cn(
     inputBase,
     invalid
-      ? "border-ruby-500 focus:border-ruby-600 focus:ring-ruby-100"
-      : "border-ink-200 hover:border-ink-600/50 focus:border-gold-500 focus:ring-gold-100",
+      ? "border-error-500 focus:border-error-600 focus:ring-error-100"
+      : "border-royal-200 hover:border-royal-600/50 focus:border-gold-500 focus:ring-gold-100",
   );
 }
 
@@ -129,7 +129,7 @@ export function ContactForm() {
         <h2 className="mt-6 text-2xl font-medium">Thank you, {values.fullName.split(" ")[0]}.</h2>
         {deliveryMode === "console" ? (
           <p className="mt-3 max-w-md leading-relaxed text-body">
-            <strong className="text-ink-800">Development mode:</strong> your submission passed validation and was logged
+            <strong className="text-royal-800">Development mode:</strong> your submission passed validation and was logged
             to the server console. It was not delivered to anyone.
           </p>
         ) : (
@@ -150,7 +150,7 @@ export function ContactForm() {
   return (
     <form ref={formRef} noValidate onSubmit={onSubmit} aria-describedby="form-required-note" className="relative space-y-6">
       <p id="form-required-note" className="text-sm text-muted">
-        Fields marked <span className="text-ruby-600">*</span> are required.
+        Fields marked <span className="text-gold-700">*</span> are required.
       </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -259,8 +259,8 @@ export function ContactForm() {
       </div>
 
       <fieldset aria-describedby={visibleError("services") ? "services-error" : undefined}>
-        <legend className="text-[0.92rem] font-semibold text-ink-800">
-          Services Interested In <span className="text-ruby-600" aria-hidden="true">*</span>
+        <legend className="text-[0.92rem] font-semibold text-royal-800">
+          Services Interested In <span className="text-gold-700" aria-hidden="true">*</span>
           <span className="sr-only"> (required, select at least one)</span>
         </legend>
         <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
@@ -271,7 +271,7 @@ export function ContactForm() {
                 key={service}
                 className={cn(
                   "flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-[0.93rem] transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-gold-100",
-                  checked ? "border-gold-500 bg-gold-50 text-ink-800" : "border-ink-200 bg-white text-ink-700 hover:border-ink-600/50",
+                  checked ? "border-gold-500 bg-gold-50 text-royal-800" : "border-royal-200 bg-white text-royal-700 hover:border-royal-600/50",
                 )}
               >
                 <input
@@ -286,7 +286,7 @@ export function ContactForm() {
                   aria-hidden="true"
                   className={cn(
                     "flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors",
-                    checked ? "border-gold-600 bg-gold-600 text-white" : "border-ink-200 bg-white",
+                    checked ? "border-gold-600 bg-gold-600 text-white" : "border-royal-200 bg-white",
                   )}
                 >
                   {checked && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
@@ -343,16 +343,16 @@ export function ContactForm() {
               update("phiAcknowledged", e.target.checked);
               setErrors(validateContact({ ...values, phiAcknowledged: e.target.checked }));
             }}
-            className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-ink-200 accent-gold-600"
+            className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-royal-200 accent-gold-600"
             aria-invalid={Boolean(visibleError("phiAcknowledged"))}
             aria-describedby={visibleError("phiAcknowledged") ? "phiAcknowledged-error" : undefined}
           />
           <span className="text-[0.9rem] leading-relaxed text-body">
             I confirm this request does not include protected health information, and I agree to the{" "}
-            <a href="/privacy-policy" className="font-medium text-gold-700 underline underline-offset-2 hover:text-ink-800">
+            <a href="/privacy-policy" className="font-medium text-gold-700 underline underline-offset-2 hover:text-royal-800">
               Privacy Policy
             </a>
-            . <span className="text-ruby-600" aria-hidden="true">*</span>
+            . <span className="text-gold-700" aria-hidden="true">*</span>
           </span>
         </label>
         <ErrorText id="phiAcknowledged-error" message={visibleError("phiAcknowledged")} />
@@ -367,7 +367,7 @@ export function ContactForm() {
             role="alert"
             className={cn(
               "flex gap-3 rounded-xl border p-4 text-[0.92rem] leading-relaxed",
-              status === "error" ? "border-ruby-100 bg-ruby-50 text-ruby-700" : "border-ink-200 bg-ink-50 text-ink-800",
+              status === "error" ? "border-error-100 bg-error-50 text-error-700" : "border-royal-200 bg-royal-50 text-royal-800",
             )}
           >
             {status === "error" ? (
@@ -443,11 +443,11 @@ function Field({
   return (
     <div>
       <div className="mb-2 flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="text-[0.92rem] font-semibold text-ink-800">
+        <label htmlFor={id} className="text-[0.92rem] font-semibold text-royal-800">
           {label}
           {required && (
             <>
-              <span className="text-ruby-600" aria-hidden="true">
+              <span className="text-gold-700" aria-hidden="true">
                 {" "}
                 *
               </span>
@@ -466,7 +466,7 @@ function Field({
 function ErrorText({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-2 flex items-center gap-1.5 text-[0.85rem] text-ruby-700">
+    <p id={id} className="mt-2 flex items-center gap-1.5 text-[0.85rem] text-error-700">
       <CircleAlert aria-hidden="true" className="h-4 w-4 shrink-0" />
       {message}
     </p>

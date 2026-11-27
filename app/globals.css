@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Revdian design tokens: "Royal Luxe" palette
-     Primary     Midnight Navy   #101C3A  (ink-900)
-     Secondary   Royal Blue      #243F70  (ink-700)
-     Accent      Ruby Red        #B8323C  (ruby-600), used sparingly
-     Gold        Champagne Gold  #D4AF67  (gold-400)
-     Background  Ivory           #F7F4ED  (ivory)
-   Headlines are set in an editorial serif (Newsreader); interface and body
-   text use Geist. "ink" is the navy scale.
+   Revdian design tokens: a three-colour system
+     Royal Blue      #243F70  (royal-700)  primary brand colour
+     Champagne Gold  #D4AF67  (gold-400)   premium accent
+     Ivory           #F7F4ED  (ivory)      background
+   Every other value is a tint or shade of those three. The only
+   exception is the functional error red, used solely for form validation.
+   Headlines use an editorial serif (Newsreader); interface and body text
+   use Geist.
    ------------------------------------------------------------------ */
 @theme inline {
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -16,14 +16,15 @@
 }
 
 @theme {
-  --color-ink-950: #0A1229;
-  --color-ink-900: #101C3A;
-  --color-ink-800: #172850;
-  --color-ink-700: #243F70;
-  --color-ink-600: #3B5585;
-  --color-ink-200: #C5CDDC;
-  --color-ink-100: #E3E7EF;
-  --color-ink-50: #F0F1F4;
+  --color-royal-950: #172B52;
+  --color-royal-900: #1C335F;
+  --color-royal-800: #203966;
+  --color-royal-700: #243F70;
+  --color-royal-600: #34528A;
+  --color-royal-500: #4F6A9C;
+  --color-royal-200: #C8D1E2;
+  --color-royal-100: #E3E8F1;
+  --color-royal-50: #F0F3F8;
 
   --color-gold-700: #7E6026;
   --color-gold-600: #A47F38;
@@ -33,19 +34,21 @@
   --color-gold-100: #F4EBD5;
   --color-gold-50: #FAF5E8;
 
-  --color-ruby-700: #94262F;
-  --color-ruby-600: #B8323C;
-  --color-ruby-500: #CC4A54;
-  --color-ruby-100: #F5DCDE;
-  --color-ruby-50: #FBEEEF;
-
   --color-ivory: #F7F4ED;
-  --color-body: #4A5570;
-  --color-muted: #6B7389;
+  --color-ivory-deep: #EFEADF;
+  --color-body: #48556F;
+  --color-muted: #6B7590;
   --color-line: #E6E0D2;
 
-  --shadow-soft: 0 1px 2px rgb(16 28 58 / 0.04), 0 12px 32px -18px rgb(16 28 58 / 0.18);
-  --shadow-lift: 0 2px 6px rgb(16 28 58 / 0.05), 0 40px 80px -36px rgb(16 28 58 / 0.38);
+  /* Functional only: form validation messages. Not a brand colour. */
+  --color-error-700: #9B2C2C;
+  --color-error-600: #B42318;
+  --color-error-500: #C2453A;
+  --color-error-100: #F7DEDB;
+  --color-error-50: #FCF1EF;
+
+  --shadow-soft: 0 1px 2px rgb(28 51 95 / 0.04), 0 12px 32px -18px rgb(28 51 95 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(28 51 95 / 0.05), 0 40px 80px -36px rgb(28 51 95 / 0.38);
   --shadow-glow: 0 0 0 1px rgb(212 175 103 / 0.18), 0 30px 80px -30px rgb(194 154 78 / 0.45);
 
   --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
@@ -93,7 +96,7 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    color: var(--color-ink-900);
+    color: var(--color-royal-700);
     letter-spacing: -0.018em;
     text-wrap: balance;
   }
@@ -118,7 +121,7 @@
 
   ::selection {
     background-color: var(--color-gold-200);
-    color: var(--color-ink-900);
+    color: var(--color-royal-900);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -138,8 +141,8 @@
 /* Fine technical grid used behind light panels */
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, rgb(16 28 58 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(16 28 58 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgb(28 51 95 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(28 51 95 / 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -155,13 +158,22 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Signature dark surface: deep ink with a warm gold aurora */
-@utility bg-ink-aurora {
-  background-color: var(--color-ink-950);
+/* Signature brand surface: royal blue with a soft gold glow */
+@utility bg-royal-stage {
+  background-color: var(--color-royal-700);
   background-image:
-    radial-gradient(60rem 32rem at 85% -10%, rgb(194 154 78 / 0.22), transparent 60%),
-    radial-gradient(48rem 28rem at -10% 110%, rgb(36 63 112 / 0.55), transparent 60%),
-    linear-gradient(180deg, var(--color-ink-950), var(--color-ink-900));
+    radial-gradient(56rem 30rem at 88% -12%, rgb(212 175 103 / 0.2), transparent 62%),
+    radial-gradient(44rem 26rem at -8% 112%, rgb(23 43 82 / 0.75), transparent 62%),
+    linear-gradient(165deg, #2B4A82 0%, var(--color-royal-700) 45%, var(--color-royal-900) 100%);
+}
+
+/* Inset "stage" frame: a rounded royal panel sitting inside the ivory page */
+@utility stage-frame {
+  border-radius: 2rem;
+  box-shadow: inset 0 0 0 1px rgb(212 175 103 / 0.16), 0 40px 80px -50px rgb(28 51 95 / 0.55);
+  @media (width >= 40rem) {
+    border-radius: 2.75rem;
+  }
 }
 
 /* Gold gradient text for single accent words in headlines */
@@ -225,7 +237,7 @@
     text-underline-offset: 3px;
   }
   .legal-content strong {
-    color: var(--color-ink-800);
+    color: var(--color-royal-800);
   }
 }
 

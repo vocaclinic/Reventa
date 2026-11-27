@@ -26,26 +26,26 @@ export function OperatingModel() {
             return (
               <div
                 key={layer.title}
-                className="relative flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-900/80 p-3.5"
+                className="relative flex items-center gap-4 rounded-2xl border border-white/10 bg-royal-900/80 p-3.5"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400 ring-1 ring-gold-400/25">
                   <Icon className="h-5 w-5" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-[14px] font-semibold text-white">{layer.title}</span>
-                  <span className="block text-[12px] text-ink-200">{layer.text}</span>
+                  <span className="block text-[12px] text-royal-200">{layer.text}</span>
                 </span>
               </div>
             );
           })}
         </div>
-        <div className="mt-5 flex items-center gap-3 rounded-2xl bg-gold-500 p-3.5 text-ink-950">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink-950/10">
+        <div className="mt-5 flex items-center gap-3 rounded-2xl bg-gold-500 p-3.5 text-royal-950">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-royal-950/10">
             <Users className="h-5 w-5" />
           </span>
           <span>
             <span className="block text-[14px] font-bold">Your organization</span>
-            <span className="block text-[12px] font-medium text-ink-900/80">Defined roles, regular updates</span>
+            <span className="block text-[12px] font-medium text-royal-900/80">Defined roles, regular updates</span>
           </span>
           <MessagesSquare className="ml-auto h-5 w-5 opacity-70" />
         </div>

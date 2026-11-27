@@ -18,13 +18,13 @@ export function ProcessTimeline({ steps }: { steps: ProcessStep[] }) {
         {steps.map((step, index) => (
           <li key={step.title}>
             <Reveal delay={index * 0.08} className="flex gap-7 lg:block lg:text-center">
-              <span className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white font-display text-3xl text-ink-900 italic shadow-soft ring-1 ring-gold-200 lg:mx-auto">
+              <span className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white font-display text-3xl text-royal-900 italic shadow-soft ring-1 ring-gold-200 lg:mx-auto">
                 <span aria-hidden="true" className="absolute inset-1.5 rounded-full ring-1 ring-line" />
                 {String(index + 1).padStart(2, "0")}
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute top-1 right-1 h-3 w-3 rotate-45 bg-ruby-600 ring-4 ring-white"
+                    className="absolute top-1 right-1 h-3 w-3 rotate-45 bg-gold-400 ring-4 ring-white"
                   />
                 )}
               </span>

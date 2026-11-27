@@ -74,7 +74,7 @@ export default function SpecialtiesPage() {
               return (
                 <Reveal key={item.href} delay={index * 0.08} className="h-full">
                   <article className="group flex h-full flex-col rounded-[28px] border border-line bg-ivory p-8 transition-all duration-300 hover:border-gold-200 hover:shadow-lift sm:p-10">
-                    <IconTile tone="ink">
+                    <IconTile tone="royal">
                       <Icon aria-hidden="true" />
                     </IconTile>
                     <h3 className="mt-7 text-2xl font-medium sm:text-3xl">{item.title}</h3>
@@ -82,7 +82,7 @@ export default function SpecialtiesPage() {
                     <CheckList items={item.points} columns={2} className="mt-7" />
                     <Link
                       href={item.href}
-                      className="mt-auto inline-flex items-center gap-1.5 pt-9 font-semibold text-gold-700 transition-colors hover:text-ink-800"
+                      className="mt-auto inline-flex items-center gap-1.5 pt-9 font-semibold text-gold-700 transition-colors hover:text-royal-800"
                     >
                       {item.cta}
                       <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -109,7 +109,7 @@ export default function SpecialtiesPage() {
                 <table className="w-full min-w-[680px] text-left">
                   <caption className="sr-only">Comparison of Home Health and Hospice billing characteristics</caption>
                   <thead>
-                    <tr className="border-b border-line bg-ink-900 text-white">
+                    <tr className="border-b border-line bg-royal-900 text-white">
                       <th scope="col" className="w-[22%] px-6 py-4 text-sm font-semibold">
                         Area
                       </th>
@@ -128,7 +128,7 @@ export default function SpecialtiesPage() {
                   <tbody className="divide-y divide-line">
                     {comparison.map((row) => (
                       <tr key={row.label} className="align-top">
-                        <th scope="row" className="px-6 py-5 text-[0.93rem] font-semibold text-ink-800">
+                        <th scope="row" className="px-6 py-5 text-[0.93rem] font-semibold text-royal-800">
                           {row.label}
                         </th>
                         <td className="px-6 py-5 text-[0.93rem] leading-relaxed">{row.homeHealth}</td>
@@ -160,12 +160,12 @@ export default function SpecialtiesPage() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.title} delay={index * 0.06} className="h-full">
-                  <article className="h-full rounded-2xl border border-dashed border-ink-200 bg-white p-7">
+                  <article className="h-full rounded-2xl border border-dashed border-royal-200 bg-white p-7">
                     <div className="flex items-start justify-between">
                       <IconTile>
                         <Icon aria-hidden="true" />
                       </IconTile>
-                      <span className="rounded-full bg-ink-50 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-ink-700 uppercase">
+                      <span className="rounded-full bg-royal-50 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-royal-700 uppercase">
                         Planned
                       </span>
                     </div>

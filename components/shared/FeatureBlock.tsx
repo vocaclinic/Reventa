@@ -31,7 +31,7 @@ export function FeatureBlock({ feature, reverse = false }: { feature: Feature; r
             <h3 className="mt-5 text-3xl leading-[1.1] sm:text-[2.6rem]">{feature.title}</h3>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-body">{feature.description}</div>
             {feature.note && (
-              <p className="mt-7 rounded-r-2xl border-l-2 border-gold-500 bg-gold-50 px-5 py-4 text-[0.94rem] leading-relaxed text-ink-700">
+              <p className="mt-7 rounded-r-2xl border-l-2 border-gold-500 bg-gold-50 px-5 py-4 text-[0.94rem] leading-relaxed text-royal-700">
                 {feature.note}
               </p>
             )}
@@ -40,10 +40,10 @@ export function FeatureBlock({ feature, reverse = false }: { feature: Feature; r
             <div className="relative rounded-[32px] border border-line bg-white p-7 shadow-lift sm:p-10">
               <div aria-hidden="true" className="absolute inset-x-9 top-0 h-px rule-gold" />
               <div className="flex items-center gap-4">
-                <IconTile tone="ink">
+                <IconTile tone="royal">
                   <Icon aria-hidden="true" />
                 </IconTile>
-                <p className="font-display text-2xl text-ink-900">
+                <p className="font-display text-2xl text-royal-900">
                   {feature.pointsTitle ?? "What this includes"}
                 </p>
               </div>

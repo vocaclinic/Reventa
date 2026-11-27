@@ -5,12 +5,12 @@ export function Container({ className, children }: { className?: string; childre
   return <div className={cn("mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8", className)}>{children}</div>;
 }
 
-type Tone = "white" | "ivory" | "ink";
+type Tone = "white" | "ivory" | "royal";
 
 const tones: Record<Tone, string> = {
   white: "bg-white",
   ivory: "bg-ivory",
-  ink: "bg-ink-aurora text-ink-200 isolate overflow-hidden",
+  royal: "bg-royal-stage stage-frame text-royal-200 isolate overflow-hidden",
 };
 
 export function Section({
@@ -26,16 +26,18 @@ export function Section({
   children: ReactNode;
   labelledBy?: string;
 }) {
-  return (
+  const section = (
     <section
       id={id}
       aria-labelledby={labelledBy}
       className={cn("relative py-24 sm:py-28 lg:py-36", tones[tone], className)}
     >
-      {tone === "ink" && <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />}
+      {tone === "royal" && <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />}
       {children}
     </section>
   );
+  // Royal sections sit inside the ivory page as an inset, rounded "stage".
+  return tone === "royal" ? <div className="bg-ivory px-2.5 py-2.5 sm:px-4 sm:py-4">{section}</div> : section;
 }
 
 export function Eyebrow({
@@ -56,7 +58,7 @@ export function Eyebrow({
       )}
     >
       <span aria-hidden="true" className="inline-flex items-center gap-1.5">
-        <span className={cn("h-1.5 w-1.5 rotate-45", tone === "light" ? "bg-ruby-600" : "bg-ruby-500")} />
+        <span className={cn("h-1.5 w-1.5 rotate-45", tone === "light" ? "bg-gold-500" : "bg-gold-400")} />
         <span className="h-px w-7 bg-current opacity-60" />
       </span>
       {children}
@@ -108,7 +110,7 @@ export function SectionHeading({
           className={cn(
             "mt-6 text-lg leading-relaxed",
             align === "center" && "mx-auto max-w-2xl",
-            tone === "light" ? "text-body" : "text-ink-200",
+            tone === "light" ? "text-body" : "text-royal-200",
           )}
         >
           {description}
@@ -125,13 +127,13 @@ export function IconTile({
   className,
 }: {
   children: ReactNode;
-  tone?: "gold" | "ink" | "dark";
+  tone?: "gold" | "royal" | "dark";
   className?: string;
 }) {
   const styles = {
     gold: "bg-gold-50 text-gold-700 ring-1 ring-gold-200/70",
-    ink: "bg-ink-900 text-gold-400 ring-1 ring-ink-900 shadow-[inset_0_1px_0_rgb(255_255_255/0.1)]",
-    dark: "bg-white/[0.04] text-gold-400 ring-1 ring-gold-400/20",
+    royal: "bg-royal-700 text-gold-400 ring-1 ring-royal-700 shadow-[inset_0_1px_0_rgb(255_255_255/0.1)]",
+    dark: "bg-white/[0.06] text-gold-400 ring-1 ring-gold-400/25",
   }[tone];
   return (
     <span

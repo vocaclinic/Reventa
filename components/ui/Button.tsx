@@ -11,14 +11,14 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-ink-900 text-ivory shadow-[inset_0_1px_0_rgb(255_255_255/0.12),0_1px_2px_rgb(16_28_58/0.25),0_12px_28px_-12px_rgb(16_28_58/0.6)] hover:bg-ink-800 hover:-translate-y-px",
+    "bg-royal-700 text-ivory shadow-[inset_0_1px_0_rgb(255_255_255/0.14),0_1px_2px_rgb(28_51_95/0.25),0_14px_30px_-14px_rgb(36_63_112/0.75)] hover:bg-royal-800 hover:-translate-y-px",
   accent:
-    "bg-[linear-gradient(135deg,#F3E3BA_0%,#D4AF67_45%,#C29A4E_100%)] text-ink-950 shadow-[inset_0_1px_0_rgb(255_255_255/0.5),0_14px_34px_-14px_rgb(194_154_78/0.85)] hover:-translate-y-px hover:brightness-[1.06]",
+    "bg-[linear-gradient(135deg,#EBD7A6_0%,#D4AF67_50%,#C29A4E_100%)] text-royal-900 shadow-[inset_0_1px_0_rgb(255_255_255/0.45),0_14px_34px_-14px_rgb(212_175_103/0.8)] hover:-translate-y-px hover:brightness-[1.05]",
   secondary:
-    "border border-ink-900/15 bg-white/70 text-ink-900 backdrop-blur hover:border-ink-900/40 hover:bg-white",
+    "border border-royal-700/20 bg-white/70 text-royal-700 backdrop-blur hover:border-royal-700/50 hover:bg-white",
   "ghost-dark":
-    "border border-white/15 bg-white/[0.04] text-white backdrop-blur hover:border-gold-400/50 hover:bg-white/[0.08]",
-  link: "px-0! py-0! text-gold-700 hover:text-ink-900",
+    "border border-white/20 bg-white/[0.06] text-white backdrop-blur hover:border-gold-400/60 hover:bg-white/[0.1]",
+  link: "px-0! py-0! text-gold-700 hover:text-royal-700",
 };
 
 const sizes: Record<Size, string> = {

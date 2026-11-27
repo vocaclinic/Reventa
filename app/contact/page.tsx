@@ -42,11 +42,11 @@ function ContactDetail({
         <span className="block text-xs font-semibold tracking-[0.12em] text-muted uppercase">{label}</span>
         {value ? (
           href ? (
-            <a href={href} className="font-medium text-ink-800 hover:text-gold-700">
+            <a href={href} className="font-medium text-royal-800 hover:text-gold-700">
               {value}
             </a>
           ) : (
-            <span className="font-medium text-ink-800">{value}</span>
+            <span className="font-medium text-royal-800">{value}</span>
           )
         ) : (
           <span className="text-muted italic">{placeholder}</span>
@@ -71,14 +71,14 @@ export default function ContactPage() {
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-sm text-muted">
               <li>
-                <Link href="/" className="hover:text-ink-800">
+                <Link href="/" className="hover:text-royal-800">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">
                 <ChevronRight className="h-3.5 w-3.5" />
               </li>
-              <li aria-current="page" className="font-medium text-ink-700">
+              <li aria-current="page" className="font-medium text-royal-700">
                 Contact
               </li>
             </ol>
@@ -99,11 +99,11 @@ export default function ContactPage() {
             <ol className="mt-5 space-y-5">
               {nextSteps.map((step, index) => (
                 <li key={step.title} className="flex gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink-900 font-display text-lg text-gold-400 italic">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-royal-900 font-display text-lg text-gold-400 italic">
                     {index + 1}
                   </span>
                   <span>
-                    <span className="block font-medium text-ink-900">{step.title}</span>
+                    <span className="block font-medium text-royal-900">{step.title}</span>
                     <span className="mt-0.5 block text-[0.94rem] leading-relaxed text-body">{step.text}</span>
                   </span>
                 </li>
@@ -112,7 +112,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div id="consultation" className="bg-ink-aurora relative isolate mt-12 overflow-hidden rounded-[28px] p-8 text-ink-200 shadow-lift">
+            <div id="consultation" className="bg-royal-stage relative isolate mt-12 overflow-hidden rounded-[28px] p-8 text-royal-200 shadow-lift">
               <div className="flex items-center gap-4">
                 <IconTile tone="dark">
                   <CalendarClock aria-hidden="true" />

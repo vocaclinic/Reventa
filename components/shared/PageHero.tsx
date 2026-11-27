@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
 /**
- * Dark hero used at the top of every inner page. Pass light-on-dark buttons
+ * Royal-blue "stage" hero used at the top of every inner page. Pass light-on-dark buttons
  * (`variant="accent"` / `variant="ghost-dark"`) in `actions`.
  */
 export function PageHero({
@@ -28,14 +28,14 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="bg-ink-aurora relative isolate overflow-hidden text-ink-200">
+    <div className="bg-ivory px-2.5 pt-1 sm:px-4 sm:pt-2">
+    <section className="bg-royal-stage stage-frame relative isolate overflow-hidden text-royal-200">
       <div aria-hidden="true" className="bg-grain pointer-events-none absolute inset-0 -z-10" />
       <div aria-hidden="true" className="bg-grid-dark mask-fade-y pointer-events-none absolute inset-0 -z-10" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 -right-40 -z-10 h-[34rem] w-[34rem] rounded-full border border-gold-400/10"
+        className="pointer-events-none absolute -top-40 -right-40 -z-10 h-[34rem] w-[34rem] rounded-full border border-gold-400/15"
       />
-      <div aria-hidden="true" className="rule-gold absolute inset-x-0 bottom-0 h-px opacity-40" />
       <Container
         className={cn(
           "py-16 sm:py-20 lg:py-28",
@@ -44,7 +44,7 @@ export function PageHero({
       >
         <div className={cn(!aside && "max-w-4xl")}>
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-1.5 text-sm text-ink-200/60">
+            <ol className="flex items-center gap-1.5 text-sm text-royal-200/75">
               <li>
                 <Link href="/" className="transition-colors hover:text-white">
                   Home
@@ -53,7 +53,7 @@ export function PageHero({
               <li aria-hidden="true">
                 <ChevronRight className="h-3.5 w-3.5" />
               </li>
-              <li aria-current="page" className="font-medium text-ink-100">
+              <li aria-current="page" className="font-medium text-royal-100">
                 {breadcrumb}
               </li>
             </ol>
@@ -65,7 +65,7 @@ export function PageHero({
               </Eyebrow>
             )}
             <h1 className="mt-6 text-[2.6rem] leading-[1.04] text-white sm:text-[3.4rem] lg:text-[3.75rem]">{title}</h1>
-            {description && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-200 sm:text-xl">{description}</p>}
+            {description && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-royal-100/90 sm:text-xl">{description}</p>}
             {actions && <div className="mt-10 flex flex-col gap-3 sm:flex-row">{actions}</div>}
             {children}
           </Reveal>
@@ -73,5 +73,6 @@ export function PageHero({
         {aside && <Reveal delay={0.12}>{aside}</Reveal>}
       </Container>
     </section>
+    </div>
   );
 }

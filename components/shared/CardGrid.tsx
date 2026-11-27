@@ -33,7 +33,7 @@ export function CardGrid({
                 tone === "white" ? "bg-white" : "bg-ivory",
               )}
             >
-              <IconTile className="transition-colors duration-300 group-hover:bg-ink-900 group-hover:text-gold-400 group-hover:ring-ink-900">
+              <IconTile className="transition-colors duration-300 group-hover:bg-royal-900 group-hover:text-gold-400 group-hover:ring-royal-900">
                 <Icon aria-hidden="true" />
               </IconTile>
               <h3 className="mt-7 text-2xl leading-tight">{item.title}</h3>

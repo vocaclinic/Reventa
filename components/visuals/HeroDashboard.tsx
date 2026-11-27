@@ -26,16 +26,16 @@ export function HeroDashboard() {
 
       <div className="relative">
       <div className="rounded-[30px] bg-white/[0.04] p-2 ring-1 ring-white/10 backdrop-blur" aria-hidden="true">
-      <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_50px_100px_-40px_rgb(0_0_0/0.8)]">
+      <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_50px_100px_-40px_rgb(23_43_82/0.8)]">
         {/* Window bar */}
         <div className="flex items-center justify-between border-b border-line bg-ivory px-5 py-3.5">
           <div className="flex items-center gap-3">
             <span className="flex gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-200" />
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-200" />
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-200" />
+              <span className="h-2.5 w-2.5 rounded-full bg-royal-200" />
+              <span className="h-2.5 w-2.5 rounded-full bg-royal-200" />
+              <span className="h-2.5 w-2.5 rounded-full bg-royal-200" />
             </span>
-            <span className="font-display text-[15px] font-medium text-ink-900">Revenue Cycle Overview</span>
+            <span className="font-display text-[15px] font-medium text-royal-900">Revenue Cycle Overview</span>
             <span className="rounded-full bg-gold-50 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-gold-700 uppercase ring-1 ring-gold-100">
               Illustrative
             </span>
@@ -49,8 +49,8 @@ export function HeroDashboard() {
               <div className="mt-3 flex h-2 overflow-hidden rounded-full">
                 <span className="w-[38%] bg-gold-500" />
                 <span className="w-[27%] bg-gold-200" />
-                <span className="w-[20%] bg-ink-600" />
-                <span className="w-[15%] bg-ink-100" />
+                <span className="w-[20%] bg-royal-600" />
+                <span className="w-[15%] bg-royal-100" />
               </div>
               <SkeletonLines />
             </Tile>
@@ -59,7 +59,7 @@ export function HeroDashboard() {
                 {[88, 62, 40, 24].map((h, i) => (
                   <span
                     key={h}
-                    className={cn("flex-1 rounded-t-[3px]", i === 0 ? "bg-gold-500" : i === 3 ? "bg-ink-200" : "bg-gold-200")}
+                    className={cn("flex-1 rounded-t-[3px]", i === 0 ? "bg-gold-500" : i === 3 ? "bg-royal-200" : "bg-gold-200")}
                     style={{ height: `${h}%` }}
                   />
                 ))}
@@ -87,7 +87,7 @@ export function HeroDashboard() {
           {/* Workflow stepper */}
           <div className="rounded-2xl border border-line p-3.5 sm:p-4">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-semibold text-ink-800">Revenue cycle workflow</span>
+              <span className="text-[11px] font-semibold text-royal-800">Revenue cycle workflow</span>
               <span className="text-[10px] text-muted">Sample status</span>
             </div>
             <ol className="mt-3.5 grid grid-cols-6 gap-1">
@@ -114,12 +114,12 @@ export function HeroDashboard() {
                       className={cn(
                         "relative flex h-8 w-8 items-center justify-center rounded-full",
                         step.state === "done" && "bg-gold-500 text-white",
-                        step.state === "active" && "bg-ink-800 text-gold-400",
+                        step.state === "active" && "bg-royal-800 text-gold-400",
                         step.state === "next" && "bg-white text-muted ring-1 ring-line",
                       )}
                     >
                       {step.state === "active" && (
-                        <span className="animate-pulse-ring absolute inset-0 rounded-full bg-ink-800/30" />
+                        <span className="animate-pulse-ring absolute inset-0 rounded-full bg-royal-800/30" />
                       )}
                       {step.state === "done" ? (
                         <Check className="h-3.5 w-3.5" strokeWidth={3} />
@@ -130,7 +130,7 @@ export function HeroDashboard() {
                     <span
                       className={cn(
                         "mt-2 text-[8.5px] font-medium sm:text-[10px]",
-                        step.state === "next" ? "text-muted" : "text-ink-700",
+                        step.state === "next" ? "text-muted" : "text-royal-700",
                       )}
                     >
                       {step.label}
@@ -145,13 +145,13 @@ export function HeroDashboard() {
           <div className="grid gap-3.5 sm:grid-cols-5">
             <div className="rounded-2xl border border-line p-3.5 sm:col-span-3 sm:p-4">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-semibold text-ink-800">Payment tracking</span>
+                <span className="text-[11px] font-semibold text-royal-800">Payment tracking</span>
                 <span className="flex items-center gap-3 text-[9.5px] text-muted">
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-3 rounded-full bg-gold-500" /> Posted
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="h-1.5 w-3 rounded-full border border-dashed border-ink-600" /> Expected
+                    <span className="h-1.5 w-3 rounded-full border border-dashed border-royal-600" /> Expected
                   </span>
                 </span>
               </div>
@@ -168,7 +168,7 @@ export function HeroDashboard() {
                 <path
                   d="M0 86 C 30 80, 50 70, 75 66 S 125 60, 150 50 S 200 38, 225 34 S 270 22, 300 18"
                   fill="none"
-                  stroke="#3B5585"
+                  stroke="#34528A"
                   strokeWidth="1.5"
                   strokeDasharray="4 4"
                   vectorEffect="non-scaling-stroke"
@@ -194,16 +194,16 @@ export function HeroDashboard() {
             </div>
 
             <div className="rounded-2xl border border-line p-3.5 sm:col-span-2 sm:p-4">
-              <span className="text-[11px] font-semibold text-ink-800">Denial worklist</span>
+              <span className="text-[11px] font-semibold text-royal-800">Denial worklist</span>
               <ul className="mt-3 space-y-2.5">
                 {[
                   { label: "Eligibility", status: "Corrected", style: "bg-gold-50 text-gold-700" },
-                  { label: "Authorization", status: "Appeal prep", style: "bg-ruby-50 text-ruby-700 ring-1 ring-ruby-100" },
+                  { label: "Authorization", status: "Appeal prep", style: "bg-royal-700 text-ivory" },
                   { label: "Documentation", status: "With provider", style: "bg-ivory text-muted ring-1 ring-line" },
-                  { label: "Coding", status: "In review", style: "bg-ink-50 text-ink-700" },
+                  { label: "Coding", status: "In review", style: "bg-royal-50 text-royal-700" },
                 ].map((row) => (
                   <li key={row.label} className="flex items-center justify-between gap-2">
-                    <span className="text-[10.5px] font-medium text-ink-700">{row.label}</span>
+                    <span className="text-[10.5px] font-medium text-royal-700">{row.label}</span>
                     <span className={cn("rounded-full px-2 py-0.5 text-[9px] font-semibold whitespace-nowrap", row.style)}>
                       {row.status}
                     </span>
@@ -219,31 +219,31 @@ export function HeroDashboard() {
       {/* Floating detail cards */}
       <div
         aria-hidden="true"
-        className="absolute -top-6 -right-3 hidden items-center gap-3 rounded-2xl border border-white/10 bg-ink-900/90 px-4 py-3 shadow-[0_24px_50px_-20px_rgb(0_0_0/0.8)] backdrop-blur-xl sm:flex lg:-right-8"
+        className="absolute -top-6 -right-3 hidden items-center gap-3 rounded-2xl border border-white/10 bg-royal-900/90 px-4 py-3 shadow-[0_24px_50px_-20px_rgb(23_43_82/0.8)] backdrop-blur-xl sm:flex lg:-right-8"
       >
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400/15 text-gold-400 ring-1 ring-gold-400/25">
           <CalendarClock className="h-[18px] w-[18px]" />
         </span>
         <span>
           <span className="block text-[11.5px] font-semibold text-white">Payer follow-up scheduled</span>
-          <span className="block text-[10px] text-ink-200/70">A/R worklist · sample</span>
+          <span className="block text-[10px] text-royal-200/70">A/R worklist · sample</span>
         </span>
       </div>
       <div
         aria-hidden="true"
-        className="absolute -bottom-7 -left-3 hidden items-center gap-3 rounded-2xl border border-gold-200 bg-ivory px-4 py-3 shadow-[0_24px_50px_-20px_rgb(0_0_0/0.7)] sm:flex lg:-left-10"
+        className="absolute -bottom-7 -left-3 hidden items-center gap-3 rounded-2xl border border-gold-200 bg-ivory px-4 py-3 shadow-[0_24px_50px_-20px_rgb(23_43_82/0.7)] sm:flex lg:-left-10"
       >
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-50 text-gold-700 ring-1 ring-gold-100">
           <ShieldCheck className="h-[18px] w-[18px]" />
         </span>
         <span>
-          <span className="block text-[11.5px] font-semibold text-ink-800">Quality review complete</span>
+          <span className="block text-[11.5px] font-semibold text-royal-800">Quality review complete</span>
           <span className="block text-[10px] text-muted">Human QA checkpoint</span>
         </span>
       </div>
       </div>
 
-      <figcaption id="hero-visual-caption" className="mt-6 text-center text-xs text-ink-200/50 sm:mt-14">
+      <figcaption id="hero-visual-caption" className="mt-6 text-center text-xs text-royal-200/50 sm:mt-14">
         <span className="sr-only">
           Illustration of a revenue cycle dashboard showing a claims workflow, accounts receivable aging, payment
           tracking and a denial worklist.{" "}
@@ -257,7 +257,7 @@ export function HeroDashboard() {
 function Tile({ label, short, children }: { label: string; short: string; children: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-line p-2.5 sm:rounded-2xl sm:p-3.5">
-      <span className="block truncate text-[9.5px] font-semibold text-ink-700 sm:text-[11px]">
+      <span className="block truncate text-[9.5px] font-semibold text-royal-700 sm:text-[11px]">
         <span className="sm:hidden">{short}</span>
         <span className="hidden sm:inline">{label}</span>
       </span>
@@ -269,8 +269,8 @@ function Tile({ label, short, children }: { label: string; short: string; childr
 function SkeletonLines({ short = false }: { short?: boolean }) {
   return (
     <div className="mt-2.5 space-y-1.5">
-      <span className={cn("block h-1.5 rounded-full bg-ink-100", short ? "w-3/5" : "w-4/5")} />
-      <span className="block h-1.5 w-2/5 rounded-full bg-ink-50" />
+      <span className={cn("block h-1.5 rounded-full bg-royal-100", short ? "w-3/5" : "w-4/5")} />
+      <span className="block h-1.5 w-2/5 rounded-full bg-royal-50" />
     </div>
   );
 }

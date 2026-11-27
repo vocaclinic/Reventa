@@ -32,11 +32,11 @@ function ServiceIndex() {
                 href={`#${service.slug}`}
                 className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-ivory"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold-50 text-gold-700 ring-1 ring-gold-100 transition-colors group-hover:bg-ink-800 group-hover:text-gold-400">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold-50 text-gold-700 ring-1 ring-gold-100 transition-colors group-hover:bg-royal-800 group-hover:text-gold-400">
                   <Icon aria-hidden="true" className="h-[18px] w-[18px]" />
                 </span>
-                <span className="min-w-0 flex-1 text-[0.9rem] font-semibold text-ink-800">{service.navLabel}</span>
-                <span aria-hidden="true" className="text-xs font-semibold text-ink-200">
+                <span className="min-w-0 flex-1 text-[0.9rem] font-semibold text-royal-800">{service.navLabel}</span>
+                <span aria-hidden="true" className="text-xs font-semibold text-royal-200">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </Link>
@@ -82,7 +82,7 @@ export default function ServicesPage() {
                 <Reveal className="lg:col-span-5">
                   <div className="lg:sticky lg:top-28">
                     <div className="flex items-center gap-4">
-                      <IconTile tone="ink">
+                      <IconTile tone="royal">
                         <Icon aria-hidden="true" />
                       </IconTile>
                       <span className="font-display text-sm font-medium tracking-[0.14em] text-muted uppercase">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                       {service.points.map((point) => (
                         <li
                           key={point}
-                          className="rounded-full border border-line bg-white px-3 py-1.5 text-[0.82rem] font-medium text-ink-700"
+                          className="rounded-full border border-line bg-white px-3 py-1.5 text-[0.82rem] font-medium text-royal-700"
                         >
                           {point}
                         </li>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                     </ul>
                     <Link
                       href="/contact"
-                      className="mt-8 inline-flex items-center gap-1.5 font-semibold text-gold-700 transition-colors hover:text-ink-800"
+                      className="mt-8 inline-flex items-center gap-1.5 font-semibold text-gold-700 transition-colors hover:text-royal-800"
                     >
                       Discuss {service.title}
                       <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -121,7 +121,7 @@ export default function ServicesPage() {
                       <div
                         className={
                           i === 2
-                            ? "rounded-2xl bg-ink-900 p-7 text-ink-100 sm:p-8"
+                            ? "rounded-2xl bg-royal-900 p-7 text-royal-100 sm:p-8"
                             : "rounded-2xl border border-line bg-white p-7 sm:p-8"
                         }
                       >

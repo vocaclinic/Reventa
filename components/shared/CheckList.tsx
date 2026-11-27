@@ -28,7 +28,7 @@ export function CheckList({
           <span
             className={cn(
               "text-[0.95rem] leading-snug",
-              tone === "light" ? "text-ink-700" : "text-ink-100/90",
+              tone === "light" ? "text-royal-700" : "text-royal-100/90",
             )}
           >
             {item}

@@ -112,7 +112,7 @@ export default function AboutPage() {
           </h2>
           <div className="grid gap-6 lg:grid-cols-2">
             <Reveal className="h-full">
-              <article className="relative isolate h-full overflow-hidden rounded-[28px] bg-ink-900 p-9 sm:p-12">
+              <article className="relative isolate h-full overflow-hidden rounded-[28px] bg-royal-900 p-9 sm:p-12">
                 <div aria-hidden="true" className="bg-grid-dark mask-fade-b absolute inset-0 -z-10" />
                 <div aria-hidden="true" className="absolute -top-20 -right-20 -z-10 h-64 w-64 rounded-full bg-gold-500/20 blur-3xl" />
                 <div>
@@ -132,12 +132,12 @@ export default function AboutPage() {
             <Reveal delay={0.08} className="h-full">
               <article className="h-full rounded-[28px] border border-line bg-white p-9 sm:p-12">
                 <div>
-                  <IconTile tone="ink">
+                  <IconTile tone="royal">
                     <Telescope aria-hidden="true" />
                   </IconTile>
                 </div>
                 <Eyebrow className="mt-8">Our vision</Eyebrow>
-                <p className="mt-4 font-display text-2xl leading-snug font-medium text-ink-800 sm:text-[1.9rem]">
+                <p className="mt-4 font-display text-2xl leading-snug font-medium text-royal-800 sm:text-[1.9rem]">
                   To become a trusted healthcare revenue cycle management partner known for operational excellence,
                   innovation, and long-term client relationships.
                 </p>
@@ -174,11 +174,11 @@ export default function AboutPage() {
           </div>
           <Reveal>
             <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-gold-200 bg-gold-50/70 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-7">
-              <IconTile tone="ink">
+              <IconTile tone="royal">
                 <ShieldCheck aria-hidden="true" />
               </IconTile>
-              <p className="leading-relaxed text-ink-700">
-                <span className="font-semibold text-ink-800">Privacy and security are important to our approach to healthcare operations.</span>{" "}
+              <p className="leading-relaxed text-royal-700">
+                <span className="font-semibold text-royal-800">Privacy and security are important to our approach to healthcare operations.</span>{" "}
                 Specific safeguards and responsibilities are defined in each client agreement, including any business
                 associate agreement required for the engagement.
               </p>

@@ -20,16 +20,16 @@ export function CtaSection({
     <section aria-labelledby="cta-heading" className="bg-ivory py-24 sm:py-28">
       <Container>
         <Reveal>
-          <div className="bg-ink-aurora relative isolate overflow-hidden rounded-[36px] px-6 py-20 text-center shadow-lift sm:px-12 sm:py-24 lg:px-20">
+          <div className="bg-royal-stage stage-frame relative isolate overflow-hidden px-6 py-20 text-center sm:px-12 sm:py-24 lg:px-20">
             <div aria-hidden="true" className="bg-grain absolute inset-0 -z-10" />
             <div aria-hidden="true" className="bg-grid-dark mask-fade-y absolute inset-0 -z-10" />
             <div
               aria-hidden="true"
-              className="absolute top-1/2 left-1/2 -z-10 h-[46rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/10"
+              className="absolute top-1/2 left-1/2 -z-10 h-[46rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/15"
             />
             <div
               aria-hidden="true"
-              className="absolute top-1/2 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/10"
+              className="absolute top-1/2 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-400/15"
             />
             <div aria-hidden="true" className="rule-gold absolute inset-x-0 top-0 h-px" />
             <LogoMark tone="dark" className="mx-auto h-14 w-14" />
@@ -39,7 +39,7 @@ export function CtaSection({
             >
               {title}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-200">{description}</p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-royal-100/90">{description}</p>
             <div className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href={primary.href} variant="accent" size="lg" arrow className="w-full sm:w-auto">
                 {primary.label}

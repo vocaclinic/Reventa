@@ -58,7 +58,7 @@ function leadEmail(lead: Lead) {
   const text = `New consultation request from the ${siteConfig.name} website\n\n${rows
     .map(([label, value]) => `${label}: ${value}`)
     .join("\n")}\n\nReply to this email to respond to ${lead.fullName} directly.`;
-  const html = `<div style="font-family:Arial,Helvetica,sans-serif;color:#101C3A;max-width:640px">
+  const html = `<div style="font-family:Arial,Helvetica,sans-serif;color:#243F70;max-width:640px">
 <h2 style="font-family:Georgia,'Times New Roman',serif;font-weight:500;margin:0 0 4px">New consultation request</h2>
 <p style="margin:0 0 20px;color:#6B7389;font-size:13px">Submitted through the ${escapeHtml(siteConfig.name)} website contact form.</p>
 <table cellpadding="8" style="border-collapse:collapse;font-size:14px;width:100%">${rows

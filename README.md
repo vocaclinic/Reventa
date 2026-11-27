@@ -86,7 +86,7 @@ Built-in spam protection is a hidden honeypot field plus server-side validation.
 | Navigation and footer links | `lib/navigation.ts` |
 | Homepage sections | `components/home/` |
 | Page content, FAQs, metadata | `app/<route>/page.tsx` |
-| Colors (ink, gold, ivory), fonts (Newsreader serif + Geist), shadows | `app/globals.css` (`@theme` tokens) and `app/layout.tsx` (fonts) |
+| Colors (Royal Blue `royal-700` #243F70, Champagne Gold `gold-400` #D4AF67, Ivory #F7F4ED, plus their tints and shades), fonts (Newsreader serif + Geist), shadows | `app/globals.css` (`@theme` tokens) and `app/layout.tsx` (fonts) |
 
 Each page sets its title, description and canonical URL with `createMetadata()` from `lib/seo.ts`. FAQ sections also output FAQPage structured data automatically.
 
