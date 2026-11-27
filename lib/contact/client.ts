@@ -1,7 +1,8 @@
+import type { DeliveryMode } from "./delivery";
 import type { ContactFormValues, FieldErrors } from "./schema";
 
 export type SubmitResult =
-  | { status: "success"; mode: "webhook" | "console" }
+  | { status: "success"; mode: DeliveryMode }
   | { status: "not_configured" }
   | { status: "validation"; errors: FieldErrors }
   | { status: "error" };
@@ -20,7 +21,7 @@ export async function submitContactForm(values: ContactFormValues): Promise<Subm
     });
     const data = (await response.json().catch(() => ({}))) as {
       ok?: boolean;
-      mode?: "webhook" | "console";
+      mode?: DeliveryMode;
       code?: string;
       errors?: FieldErrors;
     };

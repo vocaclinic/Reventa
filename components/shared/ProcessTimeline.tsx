@@ -24,7 +24,7 @@ export function ProcessTimeline({ steps }: { steps: ProcessStep[] }) {
                 {index === 0 && (
                   <span
                     aria-hidden="true"
-                    className="absolute top-1 right-1 h-3 w-3 rotate-45 bg-gold-500 ring-4 ring-white"
+                    className="absolute top-1 right-1 h-3 w-3 rotate-45 bg-ruby-600 ring-4 ring-white"
                   />
                 )}
               </span>

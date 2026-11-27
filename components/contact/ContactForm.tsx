@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown, CircleAlert, CircleCheck, LoaderCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { submitContactForm } from "@/lib/contact/client";
+import type { DeliveryMode } from "@/lib/contact/delivery";
 import {
   challengeOptions,
   emptyContactForm,
@@ -40,7 +41,7 @@ function inputClass(invalid: boolean) {
   return cn(
     inputBase,
     invalid
-      ? "border-red-400 focus:border-red-500 focus:ring-red-100"
+      ? "border-ruby-500 focus:border-ruby-600 focus:ring-ruby-100"
       : "border-ink-200 hover:border-ink-600/50 focus:border-gold-500 focus:ring-gold-100",
   );
 }
@@ -51,7 +52,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<Partial<Record<ContactField, boolean>>>({});
   const [status, setStatus] = useState<Status>("idle");
-  const [deliveryMode, setDeliveryMode] = useState<"webhook" | "console">("webhook");
+  const [deliveryMode, setDeliveryMode] = useState<DeliveryMode>("email");
 
   const visibleError = (field: ContactField) => (touched[field] ? errors[field] : undefined);
 
@@ -149,7 +150,7 @@ export function ContactForm() {
   return (
     <form ref={formRef} noValidate onSubmit={onSubmit} aria-describedby="form-required-note" className="relative space-y-6">
       <p id="form-required-note" className="text-sm text-muted">
-        Fields marked <span className="text-red-600">*</span> are required.
+        Fields marked <span className="text-ruby-600">*</span> are required.
       </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -259,7 +260,7 @@ export function ContactForm() {
 
       <fieldset aria-describedby={visibleError("services") ? "services-error" : undefined}>
         <legend className="text-[0.92rem] font-semibold text-ink-800">
-          Services Interested In <span className="text-red-600" aria-hidden="true">*</span>
+          Services Interested In <span className="text-ruby-600" aria-hidden="true">*</span>
           <span className="sr-only"> (required, select at least one)</span>
         </legend>
         <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
@@ -351,7 +352,7 @@ export function ContactForm() {
             <a href="/privacy-policy" className="font-medium text-gold-700 underline underline-offset-2 hover:text-ink-800">
               Privacy Policy
             </a>
-            . <span className="text-red-600" aria-hidden="true">*</span>
+            . <span className="text-ruby-600" aria-hidden="true">*</span>
           </span>
         </label>
         <ErrorText id="phiAcknowledged-error" message={visibleError("phiAcknowledged")} />
@@ -366,7 +367,7 @@ export function ContactForm() {
             role="alert"
             className={cn(
               "flex gap-3 rounded-xl border p-4 text-[0.92rem] leading-relaxed",
-              status === "error" ? "border-red-200 bg-red-50 text-red-900" : "border-ink-200 bg-ink-50 text-ink-800",
+              status === "error" ? "border-ruby-100 bg-ruby-50 text-ruby-700" : "border-ink-200 bg-ink-50 text-ink-800",
             )}
           >
             {status === "error" ? (
@@ -446,7 +447,7 @@ function Field({
           {label}
           {required && (
             <>
-              <span className="text-red-600" aria-hidden="true">
+              <span className="text-ruby-600" aria-hidden="true">
                 {" "}
                 *
               </span>
@@ -465,7 +466,7 @@ function Field({
 function ErrorText({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-2 flex items-center gap-1.5 text-[0.85rem] text-red-700">
+    <p id={id} className="mt-2 flex items-center gap-1.5 text-[0.85rem] text-ruby-700">
       <CircleAlert aria-hidden="true" className="h-4 w-4 shrink-0" />
       {message}
     </p>

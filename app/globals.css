@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Revdian design tokens
-   Ink (deep midnight) is the dominant brand color, champagne gold is the
-   accent, and warm ivory is the paper. Headlines are set in an editorial
-   serif (Newsreader); interface and body text use Geist.
+   Revdian design tokens: "Royal Luxe" palette
+     Primary     Midnight Navy   #101C3A  (ink-900)
+     Secondary   Royal Blue      #243F70  (ink-700)
+     Accent      Ruby Red        #B8323C  (ruby-600), used sparingly
+     Gold        Champagne Gold  #D4AF67  (gold-400)
+     Background  Ivory           #F7F4ED  (ivory)
+   Headlines are set in an editorial serif (Newsreader); interface and body
+   text use Geist. "ink" is the navy scale.
    ------------------------------------------------------------------ */
 @theme inline {
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -12,31 +16,37 @@
 }
 
 @theme {
-  --color-ink-950: #05080f;
-  --color-ink-900: #0a0f1c;
-  --color-ink-800: #111a2e;
-  --color-ink-700: #1f2a42;
-  --color-ink-600: #34425e;
-  --color-ink-200: #c3c9d6;
-  --color-ink-100: #e4e6ec;
-  --color-ink-50: #f2f1ed;
+  --color-ink-950: #0A1229;
+  --color-ink-900: #101C3A;
+  --color-ink-800: #172850;
+  --color-ink-700: #243F70;
+  --color-ink-600: #3B5585;
+  --color-ink-200: #C5CDDC;
+  --color-ink-100: #E3E7EF;
+  --color-ink-50: #F0F1F4;
 
-  --color-gold-700: #7f6128;
-  --color-gold-600: #9c7a3c;
-  --color-gold-500: #b8964f;
-  --color-gold-400: #d4b97f;
-  --color-gold-200: #e9dcbc;
-  --color-gold-100: #f3ebd8;
-  --color-gold-50: #faf6ec;
+  --color-gold-700: #7E6026;
+  --color-gold-600: #A47F38;
+  --color-gold-500: #C29A4E;
+  --color-gold-400: #D4AF67;
+  --color-gold-200: #EADBB6;
+  --color-gold-100: #F4EBD5;
+  --color-gold-50: #FAF5E8;
 
-  --color-ivory: #faf8f3;
-  --color-body: #4a5266;
-  --color-muted: #6b7184;
-  --color-line: #e8e3d8;
+  --color-ruby-700: #94262F;
+  --color-ruby-600: #B8323C;
+  --color-ruby-500: #CC4A54;
+  --color-ruby-100: #F5DCDE;
+  --color-ruby-50: #FBEEEF;
 
-  --shadow-soft: 0 1px 2px rgb(10 15 28 / 0.04), 0 12px 32px -18px rgb(10 15 28 / 0.18);
-  --shadow-lift: 0 2px 6px rgb(10 15 28 / 0.05), 0 40px 80px -36px rgb(10 15 28 / 0.38);
-  --shadow-glow: 0 0 0 1px rgb(212 185 127 / 0.18), 0 30px 80px -30px rgb(184 150 79 / 0.45);
+  --color-ivory: #F7F4ED;
+  --color-body: #4A5570;
+  --color-muted: #6B7389;
+  --color-line: #E6E0D2;
+
+  --shadow-soft: 0 1px 2px rgb(16 28 58 / 0.04), 0 12px 32px -18px rgb(16 28 58 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(16 28 58 / 0.05), 0 40px 80px -36px rgb(16 28 58 / 0.38);
+  --shadow-glow: 0 0 0 1px rgb(212 175 103 / 0.18), 0 30px 80px -30px rgb(194 154 78 / 0.45);
 
   --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -83,7 +93,7 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    color: var(--color-ink-800);
+    color: var(--color-ink-900);
     letter-spacing: -0.018em;
     text-wrap: balance;
   }
@@ -128,8 +138,8 @@
 /* Fine technical grid used behind light panels */
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, rgb(10 15 28 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(10 15 28 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgb(16 28 58 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(16 28 58 / 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -149,14 +159,14 @@
 @utility bg-ink-aurora {
   background-color: var(--color-ink-950);
   background-image:
-    radial-gradient(60rem 32rem at 85% -10%, rgb(184 150 79 / 0.22), transparent 60%),
-    radial-gradient(48rem 28rem at -10% 110%, rgb(52 66 94 / 0.55), transparent 60%),
+    radial-gradient(60rem 32rem at 85% -10%, rgb(194 154 78 / 0.22), transparent 60%),
+    radial-gradient(48rem 28rem at -10% 110%, rgb(36 63 112 / 0.55), transparent 60%),
     linear-gradient(180deg, var(--color-ink-950), var(--color-ink-900));
 }
 
 /* Gold gradient text for single accent words in headlines */
 @utility text-gold-gradient {
-  background-image: linear-gradient(100deg, #f1e2bd 0%, #d4b97f 38%, #b8964f 70%, #e9d5a4 100%);
+  background-image: linear-gradient(100deg, #F3E3BA 0%, #D4AF67 38%, #C29A4E 70%, #EBD7A6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -164,7 +174,7 @@
 
 /* Hairline gold rule */
 @utility rule-gold {
-  background-image: linear-gradient(90deg, transparent, rgb(212 185 127 / 0.7), transparent);
+  background-image: linear-gradient(90deg, transparent, rgb(212 175 103 / 0.7), transparent);
 }
 
 @utility mask-fade-y {

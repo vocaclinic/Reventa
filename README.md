@@ -41,14 +41,14 @@ Edit **`lib/site.ts`**:
 
 ```ts
 contact: {
-  email: "hello@revdian.com",
-  phone: "+1 (555) 010-0000",
-  address: "123 Example Street, Suite 100, City, ST 00000",
+  email: "team@revdian.com",
+  phone: "",                       // optional; hidden while empty
+  address: "Wyoming, United States",
 },
 schedulingUrl: "https://calendly.com/your-team/consultation",
 ```
 
-While a value is an empty string, the site shows a clearly marked placeholder such as `[Email address — to be added]` in the footer, the contact page and the legal pages. Once you set a value, it appears everywhere and becomes a `mailto:` or `tel:` link.
+While the email or address is an empty string, the site shows a clearly marked placeholder such as `[Email address — to be added]` in the footer, the contact page and the legal pages. An empty phone number is hidden instead. Once you set a value, it appears everywhere and becomes a `mailto:` or `tel:` link.
 
 `schedulingUrl` is optional. While it is empty, the contact page asks visitors to include preferred times in the form. Once you set it, a "Book a Consultation" button links to the scheduler.
 
@@ -63,6 +63,7 @@ The form posts to `/api/contact`. That route checks the input with the same rule
 | `CONTACT_PROVIDER` | Behavior |
 | --- | --- |
 | *(unset)* | Nothing is delivered. Visitors are told that online submissions aren't enabled yet and are shown the contact email. |
+| `smtp` (recommended) | Emails each lead through your own mailbox's SMTP server using [Nodemailer](https://nodemailer.com). No third-party form service is involved. Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER` and `SMTP_PASS` (an app password); the email goes to `CONTACT_TO_EMAIL` (defaults to the contact email in `lib/site.ts`), and Reply goes straight to the visitor. See `.env.example` for Google Workspace, Zoho and Microsoft 365 settings. |
 | `webhook` | POSTs `{ "type": "contact_request", "lead": { ... } }` as JSON to `CONTACT_WEBHOOK_URL`. If `CONTACT_WEBHOOK_SECRET` is set, it is sent as the `X-Webhook-Secret` header. |
 | `console` | Development only: logs the lead to the server console and tells the visitor it was not delivered. It is disabled in production. |
 
@@ -70,7 +71,7 @@ Visitors see the "request received" message only after a provider confirms deliv
 
 **The webhook option connects to most tools:** Zapier, Make or n8n (and from there email, Google Sheets, Slack and so on), HubSpot or Salesforce inbound webhooks, or a small serverless email relay.
 
-**To add a direct integration** (for example the Resend or SendGrid email APIs, a CRM SDK, or a database), add a provider function in `lib/contact/delivery.ts` and a matching `case` in `deliverLead()`. The form UI talks only to `submitContactForm()` in `lib/contact/client.ts`, so it does not need to change.
+**To add a direct integration** (for example a CRM SDK or a database), add a provider function in `lib/contact/delivery.ts` and a matching `case` in `deliverLead()`. The form UI talks only to `submitContactForm()` in `lib/contact/client.ts`, so it does not need to change.
 
 Built-in spam protection is a hidden honeypot field plus server-side validation. For a high-traffic site, consider adding rate limiting or a CAPTCHA (for example Cloudflare Turnstile) in `app/api/contact/route.ts`.
 

@@ -16,9 +16,7 @@ export function LegalPage({
 }) {
   return (
     <>
-      <PageHero breadcrumb={breadcrumb} eyebrow="Legal" title={title} description={intro}>
-        <p className="mt-7 text-sm text-ink-200/60">Last updated: [Date — to be added upon legal review]</p>
-      </PageHero>
+      <PageHero breadcrumb={breadcrumb} eyebrow="Legal" title={title} description={intro} />
       <section className="bg-white py-20 sm:py-24">
         <Container>
           <div className="mx-auto max-w-3xl">

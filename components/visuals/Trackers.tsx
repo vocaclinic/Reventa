@@ -61,7 +61,7 @@ function TrackerCard({
 }) {
   return (
     <figure className="relative mx-auto w-full max-w-[520px]">
-      <div aria-hidden="true" className="absolute -inset-10 -z-10 rounded-[48px] bg-[radial-gradient(closest-side,rgb(184_150_79/0.32),transparent)] blur-2xl" />
+      <div aria-hidden="true" className="absolute -inset-10 -z-10 rounded-[48px] bg-[radial-gradient(closest-side,rgb(194_154_78/0.32),transparent)] blur-2xl" />
       <div aria-hidden="true" className="overflow-hidden rounded-[26px] border border-white/10 bg-white shadow-[0_50px_100px_-40px_rgb(0_0_0/0.8)] ring-8 ring-white/[0.04]">
         <div className="flex items-center justify-between border-b border-line bg-ivory/80 px-5 py-3.5">
           <div>

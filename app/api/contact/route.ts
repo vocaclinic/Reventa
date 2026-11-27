@@ -1,6 +1,9 @@
 import { deliverLead } from "@/lib/contact/delivery";
 import { normalizeContact, validateContact } from "@/lib/contact/schema";
 
+// Nodemailer needs Node.js APIs (TCP sockets), so this route must not run on the Edge runtime.
+export const runtime = "nodejs";
+
 export async function POST(request: Request) {
   let body: unknown;
   try {

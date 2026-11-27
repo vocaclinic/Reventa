@@ -21,7 +21,7 @@ export function HeroDashboard() {
     <figure className="relative mx-auto w-full max-w-[600px]" aria-labelledby="hero-visual-caption">
       <div
         aria-hidden="true"
-        className="absolute -inset-10 -z-10 rounded-[48px] bg-[radial-gradient(closest-side,rgb(184_150_79/0.35),transparent)] blur-2xl"
+        className="absolute -inset-10 -z-10 rounded-[48px] bg-[radial-gradient(closest-side,rgb(194_154_78/0.35),transparent)] blur-2xl"
       />
 
       <div className="relative">
@@ -74,7 +74,7 @@ export function HeroDashboard() {
                 <path
                   d="M0 30 C 12 28, 18 22, 30 23 S 50 14, 62 16 S 82 6, 100 5"
                   fill="none"
-                  stroke="#B8964F"
+                  stroke="#C29A4E"
                   strokeWidth="2.2"
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
@@ -158,17 +158,17 @@ export function HeroDashboard() {
               <svg viewBox="0 0 300 110" className="mt-3 h-[104px] w-full" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="hero-area" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="#B8964F" stopOpacity="0.28" />
-                    <stop offset="100%" stopColor="#B8964F" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#C29A4E" stopOpacity="0.28" />
+                    <stop offset="100%" stopColor="#C29A4E" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 {[22, 50, 78].map((y) => (
-                  <line key={y} x1="0" x2="300" y1={y} y2={y} stroke="#E8E3D8" strokeWidth="1" />
+                  <line key={y} x1="0" x2="300" y1={y} y2={y} stroke="#E6E0D2" strokeWidth="1" />
                 ))}
                 <path
                   d="M0 86 C 30 80, 50 70, 75 66 S 125 60, 150 50 S 200 38, 225 34 S 270 22, 300 18"
                   fill="none"
-                  stroke="#34425E"
+                  stroke="#3B5585"
                   strokeWidth="1.5"
                   strokeDasharray="4 4"
                   vectorEffect="non-scaling-stroke"
@@ -180,7 +180,7 @@ export function HeroDashboard() {
                 <path
                   d="M0 92 C 30 88, 50 80, 75 76 S 125 72, 150 60 S 200 50, 225 42 S 270 30, 300 26"
                   fill="none"
-                  stroke="#B8964F"
+                  stroke="#C29A4E"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
@@ -198,7 +198,7 @@ export function HeroDashboard() {
               <ul className="mt-3 space-y-2.5">
                 {[
                   { label: "Eligibility", status: "Corrected", style: "bg-gold-50 text-gold-700" },
-                  { label: "Authorization", status: "Appeal prep", style: "bg-ink-50 text-ink-700" },
+                  { label: "Authorization", status: "Appeal prep", style: "bg-ruby-50 text-ruby-700 ring-1 ring-ruby-100" },
                   { label: "Documentation", status: "With provider", style: "bg-ivory text-muted ring-1 ring-line" },
                   { label: "Coding", status: "In review", style: "bg-ink-50 text-ink-700" },
                 ].map((row) => (

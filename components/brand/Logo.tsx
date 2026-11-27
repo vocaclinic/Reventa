@@ -20,20 +20,20 @@ export function LogoMark({ tone = "light", className }: { tone?: Tone; className
     >
       <defs>
         <linearGradient id={`${id}-fill`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={tone === "light" ? "#1F2A42" : "#1A2338"} />
-          <stop offset="100%" stopColor={tone === "light" ? "#0A0F1C" : "#05080F"} />
+          <stop offset="0%" stopColor={tone === "light" ? "#243F70" : "#1C2E58"} />
+          <stop offset="100%" stopColor={tone === "light" ? "#101C3A" : "#0A1229"} />
         </linearGradient>
         <linearGradient id={`${id}-gold`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#F1E2BD" />
-          <stop offset="55%" stopColor="#D4B97F" />
-          <stop offset="100%" stopColor="#9C7A3C" />
+          <stop offset="0%" stopColor="#F3E3BA" />
+          <stop offset="55%" stopColor="#D4AF67" />
+          <stop offset="100%" stopColor="#A47F38" />
         </linearGradient>
       </defs>
       <path d={SHIELD_PATH} fill={`url(#${id}-fill)`} stroke={`url(#${id}-gold)`} strokeWidth="1.3" />
       <path
         d={R_BOWL_PATH}
         fill="none"
-        stroke="#FAF8F3"
+        stroke="#F7F4ED"
         strokeWidth="2.6"
         strokeLinecap="round"
         strokeLinejoin="round"

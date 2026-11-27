@@ -27,12 +27,13 @@ export const siteConfig: SiteConfig = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com").replace(/\/$/, ""),
 
   contact: {
-    /** e.g. "hello@revdian.com" (update the domain extension if it differs) */
-    email: "",
-    /** e.g. "+1 (555) 010-0000" */
+    email: "team@revdian.com",
+    /**
+     * Optional. While empty, the phone line is hidden everywhere (no placeholder).
+     * e.g. "+1 (555) 010-0000"
+     */
     phone: "",
-    /** e.g. "123 Example Street, Suite 100, City, ST 00000" */
-    address: "",
+    address: "Wyoming, United States",
   },
 
   /**

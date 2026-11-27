@@ -294,7 +294,7 @@ export function SpecialtiesSection() {
           </Reveal>
 
           <Reveal delay={0.08} className="h-full">
-            <article className="relative isolate flex h-full flex-col overflow-hidden rounded-[32px] border border-gold-200 bg-[linear-gradient(160deg,#FAF6EC_0%,#FFFFFF_55%)] p-8 shadow-soft sm:p-12">
+            <article className="relative isolate flex h-full flex-col overflow-hidden rounded-[32px] border border-gold-200 bg-[linear-gradient(160deg,#FAF5E8_0%,#FFFFFF_55%)] p-8 shadow-soft sm:p-12">
               <div
                 aria-hidden="true"
                 className="absolute -right-24 -bottom-24 -z-10 h-80 w-80 rounded-full bg-gold-100 blur-3xl"

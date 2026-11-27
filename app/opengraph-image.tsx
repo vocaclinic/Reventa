@@ -17,20 +17,20 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 84px",
-          background: "#05080F",
+          background: "#0A1229",
           backgroundImage:
-            "radial-gradient(circle at 88% 0%, rgba(184,150,79,0.38), transparent 48%), radial-gradient(circle at 0% 100%, rgba(52,66,94,0.7), transparent 52%)",
+            "radial-gradient(circle at 88% 0%, rgba(212,175,103,0.38), transparent 48%), radial-gradient(circle at 0% 100%, rgba(36,63,112,0.7), transparent 52%)",
           color: "#FFFFFF",
           fontFamily: "serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <svg width="76" height="76" viewBox="0 0 40 40">
-            <path d={SHIELD_PATH} fill="#111A2E" stroke="#D4B97F" strokeWidth="1.3" />
+            <path d={SHIELD_PATH} fill="#182850" stroke="#D4AF67" strokeWidth="1.3" />
             <path
               d={R_BOWL_PATH}
               fill="none"
-              stroke="#FAF8F3"
+              stroke="#F7F4ED"
               strokeWidth="2.6"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -38,7 +38,7 @@ export default function OpengraphImage() {
             <path
               d={R_LEG_PATH}
               fill="none"
-              stroke="#D4B97F"
+              stroke="#D4AF67"
               strokeWidth="2.6"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -48,7 +48,7 @@ export default function OpengraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 104, lineHeight: 1, letterSpacing: -3 }}>Revenue,</div>
-          <div style={{ fontSize: 104, lineHeight: 1.05, letterSpacing: -3, color: "#D4B97F", fontStyle: "italic" }}>
+          <div style={{ fontSize: 104, lineHeight: 1.05, letterSpacing: -3, color: "#D4AF67", fontStyle: "italic" }}>
             guarded.
           </div>
           <div
@@ -58,12 +58,12 @@ export default function OpengraphImage() {
               alignItems: "center",
               gap: 18,
               fontSize: 26,
-              color: "#C3C9D6",
+              color: "#C5CDDC",
               fontFamily: "sans-serif",
               letterSpacing: 1,
             }}
           >
-            <div style={{ width: 48, height: 1, background: "#D4B97F" }} />
+            <div style={{ width: 48, height: 1, background: "#D4AF67" }} />
             Healthcare Revenue Cycle Management · Home Health · Hospice
           </div>
         </div>

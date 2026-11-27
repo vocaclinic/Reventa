@@ -72,7 +72,7 @@ export default function TermsPage() {
       </p>
 
       <h2>9. Governing law</h2>
-      <p>These terms are governed by the laws of [State — to be determined], without regard to conflict-of-law rules.</p>
+      <p>These terms are governed by the laws of the State of Wyoming, without regard to conflict-of-law rules.</p>
 
       <h2>10. Changes</h2>
       <p>We may update these terms from time to time. Continued use of the website means you accept the updated terms.</p>

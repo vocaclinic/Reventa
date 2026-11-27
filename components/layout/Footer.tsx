@@ -79,16 +79,14 @@ export function Footer() {
                   <span className="text-ink-200/60 italic">{contactPlaceholders.email}</span>
                 )}
               </li>
-              <li className="flex gap-3">
-                <Phone aria-hidden="true" className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold-400" strokeWidth={1.6} />
-                {phone ? (
+              {phone && (
+                <li className="flex gap-3">
+                  <Phone aria-hidden="true" className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold-400" strokeWidth={1.6} />
                   <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="hover:text-white">
                     {phone}
                   </a>
-                ) : (
-                  <span className="text-ink-200/60 italic">{contactPlaceholders.phone}</span>
-                )}
-              </li>
+                </li>
+              )}
               <li className="flex gap-3">
                 <MapPin aria-hidden="true" className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold-400" strokeWidth={1.6} />
                 {address ? (
@@ -123,7 +121,7 @@ export function Footer() {
       {/* Oversized engraved wordmark */}
       <p
         aria-hidden="true"
-        className="pointer-events-none -mb-[0.22em] text-center font-display text-[25vw] leading-none tracking-[-0.05em] text-transparent select-none [-webkit-text-stroke:1px_rgb(212_185_127/0.16)]"
+        className="pointer-events-none -mb-[0.22em] text-center font-display text-[25vw] leading-none tracking-[-0.05em] text-transparent select-none [-webkit-text-stroke:1px_rgb(212_175_103/0.16)]"
       >
         Revdian
       </p>

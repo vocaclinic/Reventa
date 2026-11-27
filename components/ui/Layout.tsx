@@ -56,7 +56,7 @@ export function Eyebrow({
       )}
     >
       <span aria-hidden="true" className="inline-flex items-center gap-1.5">
-        <span className="h-1 w-1 rotate-45 bg-current" />
+        <span className={cn("h-1.5 w-1.5 rotate-45", tone === "light" ? "bg-ruby-600" : "bg-ruby-500")} />
         <span className="h-px w-7 bg-current opacity-60" />
       </span>
       {children}

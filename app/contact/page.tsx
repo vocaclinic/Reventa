@@ -158,13 +158,15 @@ export default function ContactPage() {
                 placeholder={contactPlaceholders.email}
                 href={email ? `mailto:${email}` : undefined}
               />
-              <ContactDetail
-                icon={<Phone aria-hidden="true" className="h-[18px] w-[18px]" />}
-                label="Phone"
-                value={phone}
-                placeholder={contactPlaceholders.phone}
-                href={phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : undefined}
-              />
+              {phone && (
+                <ContactDetail
+                  icon={<Phone aria-hidden="true" className="h-[18px] w-[18px]" />}
+                  label="Phone"
+                  value={phone}
+                  placeholder={contactPlaceholders.phone}
+                  href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                />
+              )}
               <ContactDetail
                 icon={<MapPin aria-hidden="true" className="h-[18px] w-[18px]" />}
                 label="Business address"
